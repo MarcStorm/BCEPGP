@@ -8,10 +8,11 @@ For this addon to work, anyone using the addon must be able to at the very least
 The addon is entirely GUI based and the frame is designed to only appear automatically on raid bosses.
 
 Functionality:
-* /bcepgp show - Shows the bcepgp window
-* /bcepgp debug - Enables debug mode
-* /bcepgp setdefaultchannel - Changes the default reporting channel. This is set to Guild by default
-* /bcepgp version - Allows you to check if each raid member is running the addon - and if so, what version of the addon they are using
+* Either /bcepgp or /bce can be used as a valid command call
+* show - Shows the bcepgp window
+* debug - Enables debug mode
+* setdefaultchannel - Changes the default reporting channel. This is set to Guild by default
+* version - Allows you to check if each raid member is running the addon - and if so, what version of the addon they are using
 
 **Note: bcepgp is a context sensitive addon and elements will be visible when they are relevent**
 
