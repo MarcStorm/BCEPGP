@@ -1,36 +1,44 @@
 function BCEPGP_LootFrame_Update()
-	if BCEPGP_pfUI then
-		local items = {};
+	if BCEPGP_ElvUI then
+		local items = GetNumLootItems()
+		local itemList = {};
 		local count = 0;
 		local numSlots = 0;
-		for i = 1, GetNumLootItems() do
+		if items > 0 then
 			numSlots = numSlots + 1;
-			local texture, item, quantity, quality, locked = GetLootSlotInfo(i);
-			if GetLootSlotLink(i) ~= nil and item ~= "Badge of Justice" then
-				local link = GetLootSlotLink(i);
-				local itemString = string.find(link, "item[%-?%d:]+");
-				itemString = strsub(link, itemString, string.len(link)-string.len(item)-6);
-				items[i-count] = {
-					[1] = texture,
-					[2] = item,
-					[3] = quality,
-					[4] = GetLootSlotLink(i),
-					[5] = itemString,
-					[6] = i
-				};
-			else
-				count = count + 1;
+			for i = 1, items do
+				if GetLootSlotLink(i) ~= nil then
+					local texture, item, quantity, quality = GetLootSlotInfo(i)
+					local itemLink = GetLootSlotLink(i)
+					local color = ITEM_QUALITY_COLORS[quality]
+					local itemString = string.find(itemLink, "item[%-?%d:]+");
+					if item ~= "Badge of Justice" then
+						itemList[i-count] = {
+							[1] = texture,
+							[2] = item,
+							[3] = quality,
+							[4] = itemLink,
+							[5] = itemString,
+							[6] = i,
+							[7] = quantity
+						};
+					else
+					count = count + 1;
+					end
+				else
+					count = count + 1;
+				end
 			end
 		end
-		for i = 1, table.getn(items) do
-			if (items[i][3] > 2 or BCEPGP_inOverride(items[i][2])) and (UnitInRaid("player") or BCEPGP_debugMode) then
+		for i = 1, table.getn(itemList) do
+			if (itemList[i][3] > 2 or BCEPGP_inOverride(items[i][2])) and (UnitInRaid("player") or BCEPGP_debugMode) then
 				BCEPGP_frame:Show();
 				BCEPGP_mode = "loot";
 				BCEPGP_toggleFrame("BCEPGP_loot");
 				break;
 			end
 		end
-		BCEPGP_populateFrame(_, items, numSlots);
+		BCEPGP_populateFrame(_, itemList, numSlots);
 	else
 		local items = {};
 		local count = 0;

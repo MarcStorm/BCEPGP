@@ -1,5 +1,5 @@
 function BCEPGP_initialise()
-	_, _, _, BCEPGP_pfUI = GetAddOnInfo("pfUI");
+	_, _, _, BCEPGP_ElvUI = GetAddOnInfo("ElvUI");
 	getglobal("BCEPGP_version_number"):SetText("Running Version: " .. BCEPGP_VERSION);
 	local ver2 = string.gsub(BCEPGP_VERSION, "%.", ",");
 	if CHANNEL == nil then
@@ -81,10 +81,16 @@ function BCEPGP_initialise()
 	BCEPGP_SendAddonMsg("version-check");
 	DEFAULT_CHAT_FRAME:AddMessage("|c00FFC100Burning Crusade EPGP Version: " .. BCEPGP_VERSION .. " Loaded|r");
 	DEFAULT_CHAT_FRAME:AddMessage("|c00FFC100BCEPGP: Currently reporting to channel - " .. CHANNEL .. "|r");
+	
 end
 
-function BCEPGP_calcGP(link, quantity)
-	local name, _, rarity, ilvl, _, iType, subType, _, slot = GetItemInfo(link);
+function BCEPGP_calcGP(link, quantity, id)
+	local name, rarity, ilvl, iType, subType, slot;
+	if id then
+		name, _, rarity, ilvl, _, iType, subType, _, slot = GetItemInfo(id);
+	else
+		name, _, rarity, ilvl, _, iType, subType, _, slot = GetItemInfo(link);
+	end
 	if not ilvl then return 0; end;
 	if tokenItemLevels[name] then
 		ilvl = tokenItemLevels[name];
@@ -177,10 +183,10 @@ function BCEPGP_populateFrame(BCEPGP_criteria, items, lootNum)
 			name = tempItems[i][2];
 			colour = ITEM_QUALITY_COLORS[tempItems[i][3]];
 			link = tempItems[i][4];
-			_, iString = GetItemInfo(tempItems[i][5]);
+			iString = tempItems[i][5];
 			slot = tempItems[i][6];
 			quantity = tempItems[i][7];
-			gp = BCEPGP_calcGP(iString, quantity);
+			gp = BCEPGP_calcGP(link, quantity);
 			backdrop = {bgFile = texture,};
 			if _G[BCEPGP_mode..'item'..i] ~= nil then
 				_G[BCEPGP_mode..'announce'..i]:Show();
@@ -190,7 +196,7 @@ function BCEPGP_populateFrame(BCEPGP_criteria, items, lootNum)
 				
 				_G[BCEPGP_mode..'tex'..i]:Show();
 				_G[BCEPGP_mode..'tex'..i]:SetBackdrop(backdrop);
-				_G[BCEPGP_mode..'tex'..i]:SetScript('OnEnter', function() GameTooltip:SetOwner(this, "ANCHOR_BOTTOMLEFT") GameTooltip:SetHyperlink(iString) GameTooltip:Show() end);
+				_G[BCEPGP_mode..'tex'..i]:SetScript('OnEnter', function() GameTooltip:SetOwner(this, "ANCHOR_BOTTOMLEFT") GameTooltip:SetHyperlink(link) GameTooltip:Show() end);
 				_G[BCEPGP_mode..'tex'..i]:SetScript('OnLeave', function() GameTooltip:Hide() end);
 				
 				_G[BCEPGP_mode..'item'..i]:Show();
@@ -217,7 +223,7 @@ function BCEPGP_populateFrame(BCEPGP_criteria, items, lootNum)
 				subframe.tex:SetHeight(20);
 				subframe.tex:SetWidth(20);
 				subframe.tex:SetBackdrop(backdrop);
-				subframe.tex:SetScript('OnEnter', function() GameTooltip:SetOwner(this, "ANCHOR_BOTTOMLEFT") GameTooltip:SetHyperlink(iString) GameTooltip:Show() end);
+				subframe.tex:SetScript('OnEnter', function() GameTooltip:SetOwner(this, "ANCHOR_BOTTOMLEFT") GameTooltip:SetHyperlink(link) GameTooltip:Show() end);
 				subframe.tex:SetScript('OnLeave', function() GameTooltip:Hide() end);
 				
 				subframe.itemName = CreateFrame('Button', BCEPGP_mode..'item'..i, subframe);

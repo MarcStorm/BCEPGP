@@ -1,7 +1,7 @@
 --[[ Globals ]]--
 BCEPGP = CreateFrame("Frame");
 _G = getfenv(0);
-BCEPGP_VERSION = "2.0.0";
+BCEPGP_VERSION = "2.0.1";
 SLASH_BCEPGP1 = "/bcepgp";
 SLASH_BCEPGP2 = "/bce";
 BCEPGP_VERSION_NOTIFIED = false;
@@ -36,7 +36,7 @@ BCEPGP_raidRoster = {};
 BCEPGP_vInfo = {};
 BCEPGP_vSearch = "GUILD";
 BCEPGP_groupVersion = {};
-BCEPGP_pfUI = nil; --nil or 1
+BCEPGP_ElvUI = nil; --nil or 1
 
 --[[ SAVED VARIABLES ]]--
 CHANNEL = nil;
