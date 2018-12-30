@@ -3,6 +3,7 @@ BCEPGP = CreateFrame("Frame");
 _G = getfenv(0);
 BCEPGP_VERSION = "2.0.0";
 SLASH_BCEPGP1 = "/bcepgp";
+SLASH_BCEPGP2 = "/bce";
 BCEPGP_VERSION_NOTIFIED = false;
 BCEPGP_mode = "guild";
 BCEPGP_recordholder = "";
@@ -110,9 +111,9 @@ function SlashCmdList.BCEPGP(msg, editbox)
 	
 	if msg == "" then
 		BCEPGP_print("Burning Crusade EPGP Usage");
-		BCEPGP_print("/bcepgp |cFF80FF80show|r - |cFFFF8080Manually shows the BCEPGP window|r");
-		BCEPGP_print("/bcepgp |cFF80FF80setDefaultChannel channel|r - |cFFFF8080Sets the default channel to send confirmation messages. Default is Guild|r");
-		BCEPGP_print("/bcepgp |cFF80FF80version|r - |cFFFF8080Checks the version of the addon everyone in your raid is running|r");
+		BCEPGP_print("|cFF80FF80show|r - |cFFFF8080Manually shows the BCEPGP window|r");
+		BCEPGP_print("|cFF80FF80setDefaultChannel channel|r - |cFFFF8080Sets the default channel to send confirmation messages. Default is Guild|r");
+		BCEPGP_print("|cFF80FF80version|r - |cFFFF8080Checks the version of the addon everyone in your raid is running|r");
 		
 	elseif msg == "show" then
 		BCEPGP_populateFrame();
