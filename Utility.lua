@@ -56,7 +56,6 @@ function BCEPGP_initialise()
 		STANDBYPERCENT = 0;
 	end
 	if BCEPGP_ntgetn(STANDBYRANKS) == 0 then
-		BCEPGP_print("abc");
 		for i = 1, 10 do
 			STANDBYRANKS[i] = {};
 			STANDBYRANKS[i][1] = GuildControlGetRankName(i);
