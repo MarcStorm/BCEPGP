@@ -19,7 +19,6 @@ function BCEPGP_handleComms(event, arg1, arg2)
 			if not slot then
 				BCEPGP_print("Unable to retrieve item information from the server. You will not see what the recipients are currently using", true);
 			end
-			BCEPGP_print(arg2);
 			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-"..BCEPGP_DistID);--.."~"..BCEPGP_distSlot);
 			local EP, GP = nil;
 			local inGuild = false;
@@ -237,7 +236,6 @@ end
 function getCombatModule(name)
 	--The Opera Event, Karazhan
 	if name == "Romulo" or name == "Julianne" or name == "The Crone" or name == "The Big Bad Wolf" then
-		BCEPGP_print(name);
 		BCEPGP_print(BCEPGP_kills);
 		BCEPGP_combatModule = "The Opera Event";
 		if name == "Romulo" or name == "Julianne" then

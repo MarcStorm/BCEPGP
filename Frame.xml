@@ -33,9 +33,6 @@
 					</Anchor>
 				</Anchors>
 				<Scripts>
-					<OnLoad>
-						BCEPGP_updateGuild();
-					</OnLoad>
 					<OnClick>
 						PlaySound("gsTitleOptionExit");
 						BCEPGP_toggleFrame("BCEPGP_guild");
@@ -59,9 +56,6 @@
 					</Anchor>
 				</Anchors>
 				<Scripts>
-					<OnLoad>
-						BCEPGP_updateGuild();
-					</OnLoad>
 					<OnClick>
 						BCEPGP_updateGuild();
 						PlaySound("gsTitleOptionExit");
@@ -1866,7 +1860,7 @@
 								elseif tonumber(this:GetText()) == 0 then
 									BCEPGP_print("Base GP coefficient cannot be 0", true);
 									this:SetText(tostring(COEF));
-								elseif COEF ~= tonumber(value)
+								elseif COEF ~= tonumber(value) then
 									COEF = tonumber(value);
 									BCEPGP_print("Updated base coefficient");
 								end

@@ -1,35 +1,37 @@
 function BCEPGP_IncAddonMsg(message, sender)
 	if strfind(message, "BCEPGP_distributing") and strfind(message, UnitName("player")) then
 		--local slot = string.sub(message, strfind(message, "~")+1);
-		local _, _, _, _, _, _, _, _, slot = GetItemInfo(BCEPGP_DistID);
-		if string.len(slot) > 0 and slot ~= nil then
-			local slotName = string.sub(slot, 9);
-			local slotid, slotid2 = BCEPGP_SlotNameToID(slotName);
-			local currentItem;
-			if slotid then
-				currentItem = GetInventoryItemLink("player", slotid);
+		if BCEPGP_DistID then
+			local _, _, _, _, _, _, _, _, slot = GetItemInfo(BCEPGP_DistID);
+			if string.len(slot) > 0 and slot ~= nil then
+				local slotName = string.sub(slot, 9);
+				local slotid, slotid2 = BCEPGP_SlotNameToID(slotName);
+				local currentItem;
+				if slotid then
+					currentItem = GetInventoryItemLink("player", slotid);
+				end
+				local currentItem2;
+				if slotid2 then
+					currentItem2 = GetInventoryItemLink("player", slotid2);
+				end
+				local itemID;
+				local itemID2;
+				if currentItem then
+					itemID = BCEPGP_getItemID(BCEPGP_getItemString(currentItem));
+					itemID2 = BCEPGP_getItemID(BCEPGP_getItemString(currentItem2));
+				else
+					itemID = "noitem";
+				end
+				if itemID2 then
+					BCEPGP_SendAddonMsg(sender.."-receiving-"..itemID.." "..itemID2);
+				else
+					BCEPGP_SendAddonMsg(sender.."-receiving-"..itemID);
+				end
+			elseif slot == "" then
+				BCEPGP_SendAddonMsg(sender.."-receiving-noslot");
+			elseif itemID == "noitem" then
+				BCEPGP_SendAddonMsg(sender.."-receiving-noitem");
 			end
-			local currentItem2;
-			if slotid2 then
-				currentItem2 = GetInventoryItemLink("player", slotid2);
-			end
-			local itemID;
-			local itemID2;
-			if currentItem then
-				itemID = BCEPGP_getItemID(BCEPGP_getItemString(currentItem));
-				itemID2 = BCEPGP_getItemID(BCEPGP_getItemString(currentItem2));
-			else
-				itemID = "noitem";
-			end
-			if itemID2 then
-				BCEPGP_SendAddonMsg(sender.."-receiving-"..itemID.." "..itemID2);
-			else
-				BCEPGP_SendAddonMsg(sender.."-receiving-"..itemID);
-			end
-		elseif slot == "" then
-			BCEPGP_SendAddonMsg(sender.."-receiving-noslot");
-		elseif itemID == "noitem" then
-			BCEPGP_SendAddonMsg(sender.."-receiving-noitem");
 		end
 		
 		
