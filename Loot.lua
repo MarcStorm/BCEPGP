@@ -80,7 +80,7 @@ function BCEPGP_LootFrame_Update()
 end
 
 function BCEPGP_announce(link, x, slotNum, quantity)
-	if BCEPGP_isML() == 0 or BCEPGP_debugMode then
+	if (GetLootMethod() == "master" and BCEPGP_isML() == 0) or BCEPGP_debugMode then
 		local iString = BCEPGP_getItemString(link);
 		local name, _, _, _, _, _, _, _, slot, tex = GetItemInfo(iString);
 		local id = BCEPGP_getItemID(iString);
@@ -130,8 +130,10 @@ function BCEPGP_announce(link, x, slotNum, quantity)
 		_G["BCEPGP_distribute_item_tex"]:SetScript('OnLeave', function() GameTooltip:Hide() end);
 		_G["BCEPGP_distribute_GP_value"]:SetText(gp);
 		BCEPGP_distributing = true;
-	else
+	elseif GetLootMethod() == "master" then
 		BCEPGP_print("You are not the Loot Master.", 1);
 		return;
+	elseif GetLootMethod() ~= "master" then
+		BCEPGP_print("The loot method is not Master Looter", 1);
 	end
 end
