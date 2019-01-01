@@ -282,7 +282,8 @@ function BCEPGP_IncAddonMsg(message, sender)
 		end
 		BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
 		for k, v in pairs(SLOTWEIGHTS) do
-			if k ~= "ROBE" and k ~= "WEAPON" then
+			if k ~= "ROBE" and k ~= "WEAPON" and k ~= "EXCEPTION" then
+				BCEPGP_print(k);
 				getglobal("BCEPGP_options_" .. k .. "_weight"):SetText(tonumber(SLOTWEIGHTS[k]));
 			end
 		end
