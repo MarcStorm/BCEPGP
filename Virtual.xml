@@ -610,7 +610,11 @@
 			</OnLoad>
 			<OnClick>
 				local name = strsub(this:GetName(), 16, strfind(this:GetName(), "_auto_check")-1);
-				AUTOEP[name] = this:GetChecked();
+				if this:GetChecked() then
+					AUTOEP[name] = true;
+				else
+					AUTOEP[name] = false;
+				end
 				BCEPGP_print("Updated auto award for " .. name);
 			</OnClick>
 		</Scripts>

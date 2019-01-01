@@ -426,7 +426,7 @@ end
 function BCEPGP_toggleStandbyRanks(show)
 	if show then
 		for i = 1, 10 do
-			if STANDBYRANKS[i][1] ~= nil then
+			if STANDBYRANKS[i][1] ~= "" then
 				getglobal("BCEPGP_options_standby_ep_rank_"..i):Show();
 				getglobal("BCEPGP_options_standby_ep_rank_"..i):SetText(tostring(STANDBYRANKS[i][1]));
 				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):Show();
@@ -436,7 +436,7 @@ function BCEPGP_toggleStandbyRanks(show)
 					getglobal("BCEPGP_options_standby_ep_check_rank_"..i):SetChecked(false);
 				end
 			end
-			if GuildControlGetRankName(i) == nil then
+			if GuildControlGetRankName(i) == "" then
 				getglobal("BCEPGP_options_standby_ep_rank_"..i):Hide();
 				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):Hide();
 				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):SetChecked(false);
@@ -445,6 +445,12 @@ function BCEPGP_toggleStandbyRanks(show)
 		BCEPGP_options_standby_ep_list_button:Hide();
 		BCEPGP_options_standby_ep_accept_whispers_check:Hide();
 		BCEPGP_options_standby_ep_accept_whispers:Hide();
+		BCEPGP_options_standby_ep_offline_check:Hide();
+		BCEPGP_options_standby_ep_offline:Hide();
+		BCEPGP_options_standby_ep_message_val:Hide();
+		BCEPGP_options_standby_ep_whisper_message:Hide();
+		BCEPGP_options_standby_ep_byrank_check:SetChecked(true);
+		BCEPGP_options_standby_ep_manual_check:SetChecked(false);
 	else
 		for i = 1, 10 do
 			getglobal("BCEPGP_options_standby_ep_rank_"..i):Hide();
@@ -453,6 +459,11 @@ function BCEPGP_toggleStandbyRanks(show)
 		BCEPGP_options_standby_ep_list_button:Show();
 		BCEPGP_options_standby_ep_accept_whispers_check:Show();
 		BCEPGP_options_standby_ep_accept_whispers:Show();
+		BCEPGP_options_standby_ep_offline_check:Show();
+		BCEPGP_options_standby_ep_offline:Show();
+		BCEPGP_options_standby_ep_message_val:Show();
+		BCEPGP_options_standby_ep_byrank_check:SetChecked(false);
+		BCEPGP_options_standby_ep_manual_check:SetChecked(true);
 	end
 end
 
@@ -712,4 +723,54 @@ end
 function capitaliseFirstLetter(str)
 	str = string.gsub(" "..str, "%W%l", string.upper):sub(2)
 	return str;
+end
+
+function BCEPGP_button_options:OnClick()
+	BCEPGP_updateGuild();
+	PlaySound("gsTitleOptionExit");
+	BCEPGP_toggleFrame("BCEPGP_options");
+	BCEPGP_mode = "options";
+	BCEPGP_options_mod_edit:SetText(tostring(MOD));
+	BCEPGP_options_coef_edit:SetText(tostring(COEF));
+	BCEPGP_options_gp_base_edit:SetText(tostring(BASEGP));
+	if STANDBYEP then
+		BCEPGP_options_standby_ep_check:SetChecked(true);
+	else
+		BCEPGP_options_standby_ep_check:SetChecked(false);
+	end
+	BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
+	if BCEPGP_standby_byrank then
+		BCEPGP_toggleStandbyRanks(true);
+	else
+		BCEPGP_toggleStandbyRanks(false);
+	end
+	if STANDBYEP then
+		getglobal("BCEPGP_options_standby_ep_check"):SetChecked(true);
+	else
+		getglobal("BCEPGP_options_standby_ep_check"):SetChecked(false);
+	end
+	if STANDBYOFFLINE then
+		getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(true);
+	else
+		getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(false);
+	end
+	BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
+	if BCEPGP_options_standby_ep_byrank_check:GetChecked() then
+		BCEPGP_options_standby_ep_message_val:Hide();
+		BCEPGP_options_standby_ep_whisper_message:Hide();
+	else
+		BCEPGP_options_standby_ep_message_val:Show();
+		BCEPGP_options_standby_ep_whisper_message:Show();
+	end;
+	if BCEPGP_options_standby_ep_check:GetChecked() then
+		BCEPGP_options_standby_ep_options:Show();
+	else
+		BCEPGP_options_standby_ep_options:Hide();
+	end
+	for k, v in pairs(SLOTWEIGHTS) do
+		if k ~= "ROBE" and k ~= "WEAPON" and k ~= "EXCEPTION" then
+			getglobal("BCEPGP_options_" .. k .. "_weight"):SetText(tonumber(SLOTWEIGHTS[k]));
+		end
+	end
+	BCEPGP_populateFrame();
 end

@@ -57,60 +57,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						BCEPGP_updateGuild();
-						PlaySound("gsTitleOptionExit");
-						BCEPGP_toggleFrame("BCEPGP_options");
-						BCEPGP_mode = "options";
-						BCEPGP_options_mod_edit:SetText(tostring(MOD));
-						BCEPGP_options_coef_edit:SetText(tostring(COEF));
-						BCEPGP_options_gp_base_edit:SetText(tostring(BASEGP));
-						if STANDBYEP then
-							BCEPGP_options_standby_ep_check:SetChecked(true);
-						else
-							BCEPGP_options_standby_ep_check:SetChecked(false);
-						end
-						BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
-						for i = 1, 10 do
-							if GuildControlGetRankName(i) == "" then
-								STANDBYRANKS[i][1] = nil;
-								getglobal("BCEPGP_options_standby_ep_check_rank_" .. i):Hide();
-							else
-								STANDBYRANKS[i][1] = GuildControlGetRankName(i);
-								getglobal("BCEPGP_options_standby_ep_check_rank_" .. i):Show();
-							end
-							if BCEPGP_standby_manual then
-								getglobal("BCEPGP_options_standby_ep_check_rank_" .. i):Hide();
-							end
-						end
-						if STANDBYEP then
-							getglobal("BCEPGP_options_standby_ep_check"):SetChecked(true);
-						else
-							getglobal("BCEPGP_options_standby_ep_check"):SetChecked(false);
-						end
-						if STANDBYOFFLINE then
-							getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(true);
-						else
-							getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(false);
-						end
-						BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
-						if BCEPGP_options_standby_ep_byrank_check:GetChecked() then
-							BCEPGP_options_standby_ep_message_val:Hide();
-							BCEPGP_options_standby_ep_whisper_message:Hide();
-						else
-							BCEPGP_options_standby_ep_message_val:Show();
-							BCEPGP_options_standby_ep_whisper_message:Show();
-						end;
-						if BCEPGP_options_standby_ep_check:GetChecked() then
-							BCEPGP_options_standby_ep_options:Show();
-						else
-							BCEPGP_options_standby_ep_options:Hide();
-						end
-						for k, v in pairs(SLOTWEIGHTS) do
-							if k ~= "ROBE" and k ~= "WEAPON" and k ~= "EXCEPTION" then
-								getglobal("BCEPGP_options_" .. k .. "_weight"):SetText(tonumber(SLOTWEIGHTS[k]));
-							end
-						end
-						BCEPGP_populateFrame();
+						this:OnClick();
 					</OnClick>
 				</Scripts>
 			</Button>

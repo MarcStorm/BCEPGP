@@ -146,6 +146,7 @@ function BCEPGP_IncAddonMsg(message, sender)
 		BCEPGP_SendAddonMsg(arg4.."-impresponse!MOD~"..MOD, lane);
 		BCEPGP_SendAddonMsg(arg4.."-impresponse!COEF~"..COEF, lane);
 		BCEPGP_SendAddonMsg(arg4.."-impresponse!BASEGP~"..BASEGP, lane);
+		BCEPGP_SendAddonMsg(arg4.."-impresponse!WHISPERMSG~"..BCEPGP_standby_whisper_msg, lane);
 		if STANDBYEP then
 			BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYEP~1", lane);
 		else
@@ -159,6 +160,16 @@ function BCEPGP_IncAddonMsg(message, sender)
 		BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYPERCENT~"..STANDBYPERCENT, lane);
 		for k, v in pairs(SLOTWEIGHTS) do
 			BCEPGP_SendAddonMsg(arg4.."-impresponse!SLOTWEIGHTS~"..k.."?"..v, lane);
+		end
+		if BCEPGP_standby_byrank then --Implies result for both byrank and manual standby designation
+			BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYBYRANK~1", lane);
+		else
+			BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYBYRANK~0", lane);
+		end
+		if BCEPGP_standby_accept_whispers then
+			BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYALLOWWHISPERS~1", lane);
+		else
+			BCEPGP_SendAddonMsg(arg4.."-impresponse!STANDBYALLOWWHISPERS~0", lane);
 		end
 		for k, v in pairs(STANDBYRANKS) do
 			if STANDBYRANKS[k][2] then
@@ -189,7 +200,7 @@ function BCEPGP_IncAddonMsg(message, sender)
 			local field = string.sub(message, strfind(message, "~")+1, strfind(message, "?")-1);
 			local val = string.sub(message, strfind(message, "?")+1);
 			if option == "SLOTWEIGHTS" then
-				SLOTWEIGHTS[field] = val;
+				SLOTWEIGHTS[field] = tonumber(val);
 			elseif option == "STANDBYRANKS" then
 				if val == "1" then
 					STANDBYRANKS[tonumber(field)][2] = true;
@@ -197,7 +208,7 @@ function BCEPGP_IncAddonMsg(message, sender)
 					STANDBYRANKS[tonumber(field)][2] = false;
 				end
 			elseif option == "EPVALS" then
-				EPVALS[field] = val;
+				EPVALS[field] = tonumber(val);
 			elseif option == "AUTOEP" then
 				if val == "1" then
 					AUTOEP[field] = true;
@@ -217,6 +228,25 @@ function BCEPGP_IncAddonMsg(message, sender)
 				COEF = tonumber(val);
 			elseif option == "BASEGP" then
 				BASEGP = tonumber(val);
+			elseif option == "STANDBYBYRANK" then
+				if val == "1" then
+					BCEPGP_standby_byrank = true;
+					BCEPGP_standby_manual = false;
+				else
+					BCEPGP_standby_byrank = false;
+					BCEPGP_standby_manual = true;
+				end
+			elseif option == "STANDBYALLOWWHISPERS" then
+				if val == "1" then
+					BCEPGP_standby_accept_whispers = true;
+					BCEPGP_options_standby_ep_accept_whispers_check:SetChecked(true);
+				else
+					BCEPGP_standby_accept_whispers = false;
+					BCEPGP_options_standby_ep_accept_whispers_check:SetChecked(false);
+				end
+			elseif option == "WHISPERMSG" then
+				BCEPGP_standby_whisper_msg = val;
+				BCEPGP_options_standby_ep_message_val:SetText(val);
 			elseif option == "STANDBYEP" then
 				if tonumber(val) == 1 then
 					STANDBYEP = true;
@@ -234,59 +264,12 @@ function BCEPGP_IncAddonMsg(message, sender)
 			elseif option == "COMPLETE" then
 				BCEPGP_UpdateOverrideScrollBar();
 				BCEPGP_print("Import complete");
+				BCEPGP_button_options:OnClick();
 			end
 		end
 		
-		BCEPGP_options_mod_edit:SetText(tostring(MOD));
-		BCEPGP_options_coef_edit:SetText(tostring(COEF));
-		BCEPGP_options_gp_base_edit:SetText(tostring(BASEGP));
-		if STANDBYEP then
-			BCEPGP_options_standby_ep_check:SetChecked(true);
-		else
-			BCEPGP_options_standby_ep_check:SetChecked(false);
-		end
-		BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
-		for i = 1, 10 do
-			if not GuildControlGetRankName(i) then
-				STANDBYRANKS[i][1] = nil;
-			else
-				STANDBYRANKS[i][1] = GuildControlGetRankName(i);
-			end
-		end
-		for i = 1, 10 do
-			if STANDBYRANKS[i][1] ~= nil then
-				getglobal("BCEPGP_options_standby_ep_rank_"..i):Show();
-				getglobal("BCEPGP_options_standby_ep_rank_"..i):SetText(tostring(STANDBYRANKS[i][1]));
-				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):Show();
-				if STANDBYRANKS[i][2] == true then
-					getglobal("BCEPGP_options_standby_ep_check_rank_"..i):SetChecked(true);
-				else
-					getglobal("BCEPGP_options_standby_ep_check_rank_"..i):SetChecked(false);
-				end
-			end
-			if GuildControlGetRankName(i) == nil then
-				getglobal("BCEPGP_options_standby_ep_rank_"..i):Hide();
-				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):Hide();
-				getglobal("BCEPGP_options_standby_ep_check_rank_"..i):SetChecked(false);
-			end
-		end
-		if STANDBYEP then
-			getglobal("BCEPGP_options_standby_ep_check"):SetChecked(true);
-		else
-			getglobal("BCEPGP_options_standby_ep_check"):SetChecked(false);
-		end
-		if STANDBYOFFLINE then
-			getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(true);
-		else
-			getglobal("BCEPGP_options_standby_ep_offline_check"):SetChecked(false);
-		end
-		BCEPGP_options_standby_ep_val:SetText(tostring(STANDBYPERCENT));
-		for k, v in pairs(SLOTWEIGHTS) do
-			if k ~= "ROBE" and k ~= "WEAPON" and k ~= "EXCEPTION" then
-				BCEPGP_print(k);
-				getglobal("BCEPGP_options_" .. k .. "_weight"):SetText(tonumber(SLOTWEIGHTS[k]));
-			end
-		end
+		BCEPGP_button_options:OnClick();
+		
 	
 	elseif strfind(message, "BCEPGP_TRAFFIC") then
 		if sender == UnitName("player") then return; end
