@@ -356,6 +356,12 @@
 			<OnClick>
 				PlaySound("igMainMenuOptionCheckBoxOn");
 			</OnClick>
+			<OnEnter>
+				BCEPGP_setOverrideLink(this:GetName() .. "item", "enter");
+			</OnEnter>
+			<OnLeave>
+				BCEPGP_setOverrideLink(this:GetName() .. "item", "leave");
+			</OnLeave>
 		</Scripts>
 		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
 	</Button>

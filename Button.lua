@@ -181,6 +181,19 @@ function BCEPGP_ListButton_OnClick()
 	end
 end
 
+function BCEPGP_setOverrideLink(arg1, arg2)
+	local name = arg1;
+	local event = arg2;
+	if event == "enter" then
+		local _, item = GetItemInfo(getglobal(arg1):GetText());
+		GameTooltip:SetOwner(this, "ANCHOR_BOTTOMLEFT");
+		GameTooltip:SetHyperlink(item);
+		GameTooltip:Show()
+	else
+		GameTooltip:Hide();
+	end
+end
+
 function BCEPGP_distribute_popup_give()
 	for i = 1, 40 do
 		if GetMasterLootCandidate(i) == BCEPGP_distPlayer then

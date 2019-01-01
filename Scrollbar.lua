@@ -1,5 +1,3 @@
-
-
 function BCEPGP_UpdateLootScrollBar()
 	local y;
 	local yoffset;
@@ -397,7 +395,6 @@ function BCEPGP_UpdateOverrideScrollBar()
 				gp = t2[2];
 				quality = t2[3];
 				getglobal("BCEPGP_overrideButton" .. y .. "item"):SetText(item);
-				getglobal("BCEPGP_overrideButton" .. y .. "item"):SetTextColor(1, 1, 1);
 				getglobal("BCEPGP_overrideButton" .. y .. "GP"):SetText(gp);
 				getglobal("BCEPGP_overrideButton" .. y .. "GP"):SetTextColor(1, 1, 1);
 				getglobal("BCEPGP_overrideButton" .. y):Show();
