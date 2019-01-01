@@ -6341,7 +6341,7 @@
 						end
 						if (OVERRIDE_INDEX[item] and overwrite) or not OVERRIDE_INDEX[item] then
 							OVERRIDE_INDEX[item] = gp;
-							BCEPGP_print("GP value for " .. BCEPGP_override_item_name:GetText() .. " has been BCEPGP_overriden to " .. gp);
+							BCEPGP_print("GP value for " .. BCEPGP_override_item_name:GetText() .. " has been overriden to " .. gp);
 							BCEPGP_UpdateOverrideScrollBar();
 							BCEPGP_override_confirm = false;
 							BCEPGP_override_item_name:SetText("");
