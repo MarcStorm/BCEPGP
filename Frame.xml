@@ -6260,10 +6260,14 @@
 						this:ClearFocus();
 						PlaySound("gsTitleOptionExit");
 						if BCEPGP_override_item_name:GetText() == "" then
-								BCEPGP_print("Enter an item name", true);
+							BCEPGP_print("Enter an item name", true);
 							return;
 						end
-						local item = BCEPGP_override_item_name:GetText();
+						local _, item = GetItemInfo(BCEPGP_override_item_name:GetText());
+						if not item then
+							BCEPGP_print("Could not find the item " .. BCEPGP_override_item_name:GetText(), true);
+							return;
+						end
 						local gp;
 						if BCEPGP_override_item_gp:GetText() == "" then
 							gp = 0;
@@ -6324,7 +6328,11 @@
 								BCEPGP_print("Enter an item name", true);
 							return;
 						end
-						local item = BCEPGP_override_item_name:GetText();
+						local _, item = GetItemInfo(BCEPGP_override_item_name:GetText());
+						if not item then
+							BCEPGP_print("Could not find the item " .. BCEPGP_override_item_name:GetText(), true);
+							return;
+						end
 						local gp;
 						if BCEPGP_override_item_gp:GetText() == "" then
 							gp = 0;
