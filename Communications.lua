@@ -1,9 +1,11 @@
 function BCEPGP_IncAddonMsg(message, sender)
 	if strfind(message, "BCEPGP_distributing") and strfind(message, UnitName("player")) then
-		--local slot = string.sub(message, strfind(message, "~")+1);
+		local _, _, _, _, _, _, _, _, slot = GetItemInfo(BCEPGP_DistID);
+		if not slot then
+			slot = string.sub(message, strfind(message, "~")+1);
+		end
 		if BCEPGP_DistID then
-			local _, _, _, _, _, _, _, _, slot = GetItemInfo(BCEPGP_DistID);
-			if string.len(slot) > 0 and slot ~= nil then
+			if slot then --string.len(slot) > 0 and slot ~= nil then
 				local slotName = string.sub(slot, 9);
 				local slotid, slotid2 = BCEPGP_SlotNameToID(slotName);
 				local currentItem;
@@ -117,7 +119,7 @@ function BCEPGP_IncAddonMsg(message, sender)
 		end
 		
 		
-	elseif strfind(message, "!need") and IsRaidOfficer() and sender ~= UnitName("player") then
+	elseif strfind(message, "!need") and sender ~= UnitName("player") then-- and IsRaidOfficer()  then
 		local arg2 = string.sub(message, strfind(message, ",")+1, strfind(message, "`")-1);
 		table.insert(BCEPGP_responses, arg2);
 		local slot = nil;

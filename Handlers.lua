@@ -19,7 +19,7 @@ function BCEPGP_handleComms(event, arg1, arg2)
 			if not slot then
 				BCEPGP_print("Unable to retrieve item information from the server. You will not see what the recipients are currently using", true);
 			end
-			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-"..BCEPGP_DistID);--.."~"..BCEPGP_distSlot);
+			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-"..BCEPGP_DistID.."~"..BCEPGP_distSlot);
 			local EP, GP = nil;
 			local inGuild = false;
 			if BCEPGP_tContains(BCEPGP_roster, arg2, true) then
