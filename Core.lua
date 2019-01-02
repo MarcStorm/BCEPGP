@@ -174,6 +174,9 @@ function BCEPGP_RaidAssistLootClosed()
 		HideUIPanel(BCEPGP_distribute);
 		HideUIPanel(BCEPGP_loot_BCEPGP_distributing);
 		HideUIPanel(distributing);
+		BCEPGP_distribute_item_tex:SetBackdrop(nil);
+		_G["BCEPGP_distribute_item_tex"]:SetScript('OnEnter', function() end);
+		_G["BCEPGP_distribute_item_name_frame"]:SetScript('OnClick', function() end);
 		for y = 1, 18 do
 			getglobal("LootDistButton"..y):Hide();
 			getglobal("LootDistButton" .. y .. "Info"):SetText("");
