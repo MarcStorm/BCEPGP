@@ -30,8 +30,8 @@ function BCEPGP_LootFrame_Update()
 				end
 			end
 		end
-		for i = 1, table.getn(itemList) do
-			if (itemList[i][3] > 2 or BCEPGP_inOverride(items[i][2])) and (UnitInRaid("player") or BCEPGP_debugMode) then
+		for i = 1, BCEPGP_ntgetn(itemList) do
+			if (itemList[i][3] > 2 or BCEPGP_inOverride(itemList[i][2])) and (UnitInRaid("player") or BCEPGP_debugMode) then
 				BCEPGP_frame:Show();
 				BCEPGP_mode = "loot";
 				BCEPGP_toggleFrame("BCEPGP_loot");

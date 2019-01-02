@@ -1,7 +1,7 @@
 --[[ Globals ]]--
 BCEPGP = CreateFrame("Frame");
 _G = getfenv(0);
-BCEPGP_VERSION = "2.0.2";
+BCEPGP_VERSION = "2.0.3";
 SLASH_BCEPGP1 = "/bcepgp";
 SLASH_BCEPGP2 = "/bce";
 BCEPGP_VERSION_NOTIFIED = false;
