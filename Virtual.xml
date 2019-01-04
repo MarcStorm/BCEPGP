@@ -1,7 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
-
-	<Button name="CEPGPHeaderButton" virtual="true">
+	
+	<Button name="BCEPGPHeaderButton" virtual="true">
 		<ButtonText name="$parentText"/>
 		<NormalFont inherits="GameFontNormal"/>
 		<HighlightFont inherits="GameFontHighlight"/>
@@ -77,7 +77,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="247" y="0"/>
+								<AbsDimension x="280" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -86,16 +86,16 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="280" y="0"/>
+								<AbsDimension x="340" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
 				<FontString name="$parentPR" inherits="GameFontHighlight" justifyH="LEFT">
 					<Anchors>
-						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+						<Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="307.5" y="0"/>
+								<AbsDimension x="420" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -154,7 +154,7 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="260" y="0"/>
+								<AbsDimension x="290" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -163,16 +163,16 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="295" y="0"/>
+								<AbsDimension x="340" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
 				<FontString name="$parentPR" inherits="GameFontHighlight" justifyH="CENTER">
 					<Anchors>
-						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
+						<Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="340" y="0"/>
+								<AbsDimension x="420" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -229,7 +229,7 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="240" y="0"/>
+								<AbsDimension x="290" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -238,16 +238,16 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="285" y="0"/>
+								<AbsDimension x="340" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
 				<FontString name="$parentPR" inherits="GameFontHighlight" justifyH="CENTER">
 					<Anchors>
-						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
+						<Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="330" y="0"/>
+								<AbsDimension x="420" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -596,6 +596,10 @@
 					this:SetText(SLOTWEIGHTS[slot]);
 				end
 			</OnEditFocusLost>
+			<OnShow>
+				local slot = strsub(this:GetName(), 16, strfind(this:GetName(), "_weight")-1);
+				this:SetPoint('LEFT', getglobal("BCEPGP_options_slot_" .. slot), 'RIGHT', 10, 0);
+			</OnShow>
 		</Scripts>
 	</EditBox>
 	
@@ -625,4 +629,8 @@
 			</OnClick>
 		</Scripts>
 	</CheckButton>
+
+	<FontString name="SlotWeightFontTemplate" inherits="GameFontNormal" virtual="true">
+		<Color r="1" g="1" b="1"/>
+	</FontString>
 </Ui>

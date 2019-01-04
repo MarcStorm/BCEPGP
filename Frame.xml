@@ -3,7 +3,7 @@
 		
 	<Frame name="BCEPGP_frame" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true">
 		<Size>
-			<AbsDimension x="400" y="480" />
+			<AbsDimension x="450" y="480" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER" />
@@ -151,7 +151,7 @@
 			</Button>
 			<Frame name="BCEPGP_guild" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -416,7 +416,7 @@
 						</Scripts>
 						</Frames>
 					</Frame>
-					<Button name="BCEPGP_guild_name" inherits="CEPGPHeaderButton" text="Name">
+					<Button name="BCEPGP_guild_name" inherits="BCEPGPHeaderButton" text="Name">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -434,7 +434,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_guild_class" inherits="CEPGPHeaderButton" text="Class">
+					<Button name="BCEPGP_guild_class" inherits="BCEPGPHeaderButton" text="Class">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -451,7 +451,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_guild_rank" inherits="CEPGPHeaderButton" text="Rank">
+					<Button name="BCEPGP_guild_rank" inherits="BCEPGPHeaderButton" text="Rank">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -468,14 +468,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_guild_EP" inherits="CEPGPHeaderButton" text="EP">
+					<Button name="BCEPGP_guild_EP" inherits="BCEPGPHeaderButton" text="EP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_rank">
 								<Offset>
-									<AbsDimension x="85" y="0" />
+									<AbsDimension x="115" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -485,14 +485,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_guild_GP" inherits="CEPGPHeaderButton" text="GP">
+					<Button name="BCEPGP_guild_GP" inherits="BCEPGPHeaderButton" text="GP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_EP">
 								<Offset>
-									<AbsDimension x="35" y="0" />
+									<AbsDimension x="50" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -502,14 +502,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_guild_PR" inherits="CEPGPHeaderButton" text="PR">
+					<Button name="BCEPGP_guild_PR" inherits="BCEPGPHeaderButton" text="PR">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
-							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_GP">
+							<Anchor point="TOPRIGHT">
 								<Offset>
-									<AbsDimension x="45" y="0" />
+									<AbsDimension x="-5" y="-50" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -613,7 +613,7 @@
 			</Frame>
 			<Frame name="BCEPGP_raid" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -834,14 +834,14 @@
 						</Scripts>
 						</Frames>
 					</Frame>
-					<Button name="BCEPGP_raid_group" inherits="CEPGPHeaderButton" text="Group">
+					<Button name="BCEPGP_raid_group" inherits="BCEPGPHeaderButton" text="Group">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
-									<AbsDimension x="5" y="-50" />
+									<AbsDimension x="7.5" y="-50" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -851,7 +851,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_raid_name" inherits="CEPGPHeaderButton" text="Name">
+					<Button name="BCEPGP_raid_name" inherits="BCEPGPHeaderButton" text="Name">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -868,7 +868,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_raid_rank" inherits="CEPGPHeaderButton" text="Rank">
+					<Button name="BCEPGP_raid_rank" inherits="BCEPGPHeaderButton" text="Rank">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -885,14 +885,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_raid_EP" inherits="CEPGPHeaderButton" text="EP">
+					<Button name="BCEPGP_raid_EP" inherits="BCEPGPHeaderButton" text="EP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_raid_rank">
 								<Offset>
-									<AbsDimension x="84" y="0" />
+									<AbsDimension x="130" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -902,14 +902,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_raid_GP" inherits="CEPGPHeaderButton" text="GP">
+					<Button name="BCEPGP_raid_GP" inherits="BCEPGPHeaderButton" text="GP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_raid_EP">
 								<Offset>
-									<AbsDimension x="45" y="0" />
+									<AbsDimension x="50" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -919,14 +919,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_raid_PR" inherits="CEPGPHeaderButton" text="PR">
+					<Button name="BCEPGP_raid_PR" inherits="BCEPGPHeaderButton" text="PR">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
-							<Anchor point="RIGHT" relativeTo="BCEPGP_raid_GP">
+							<Anchor point="TOPRIGHT">
 								<Offset>
-									<AbsDimension x="45" y="0" />
+									<AbsDimension x="-5" y="-50" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -974,7 +974,7 @@
 			</Frame>
 			<Frame name="BCEPGP_loot" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -994,7 +994,7 @@
 					</Layer>
 				</Layers>
 				<Frames>
-					<Button name="BCEPGP_loot_announce" inherits="CEPGPHeaderButton" text="Announce">
+					<Button name="BCEPGP_loot_announce" inherits="BCEPGPHeaderButton" text="Announce">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -1006,26 +1006,26 @@
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="BCEPGP_loot_item" inherits="CEPGPHeaderButton" text="Item">
+					<Button name="BCEPGP_loot_item" inherits="BCEPGPHeaderButton" text="Item">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
-							<Anchor point="TOPLEFT" relativeTo="BCEPGP_loot_announce">
+							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_loot_announce">
 								<Offset>
-									<AbsDimension x="55" y="0" />
+									<AbsDimension x="40" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
 					</Button>
-					<Button name="BCEPGP_loot_GP" inherits="CEPGPHeaderButton" text="GP">
+					<Button name="BCEPGP_loot_GP" inherits="BCEPGPHeaderButton" text="GP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
-							<Anchor point="RIGHT" relativeTo="BCEPGP_loot_item">
+							<Anchor point="TOPRIGHT">
 								<Offset>
-									<AbsDimension x="260" y="0" />
+									<AbsDimension x="-20" y="-10" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -1045,7 +1045,7 @@
 			</Frame>
 			<Frame name="BCEPGP_distribute" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -1089,9 +1089,9 @@
 						<FontString name="BCEPGP_distribute_GP_head" inherits="GameFontNormal" text="GP">
 							<Color r="1" g="1" b="1"/>
 							<Anchors>
-								<Anchor point="TOPLEFT">
+								<Anchor point="TOPRIGHT">
 									<Offset>
-										<AbsDimension x="337" y="-30" />
+										<AbsDimension x="-20" y="-30" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -1331,14 +1331,14 @@
 						</Anchors>
 					</Button>
 					<!--Display for the raid members-->
-					<Button name="BCEPGP_distribute_raid_name" inherits="CEPGPHeaderButton" text="Name">
+					<Button name="BCEPGP_distribute_raid_name" inherits="BCEPGPHeaderButton" text="Name">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
 								<Offset>
-									<AbsDimension x="5" y="-60" />
+									<AbsDimension x="7.5" y="-60" />
 									<!--<AbsDimension x="40" y="0" />-->
 								</Offset>
 							</Anchor>
@@ -1349,7 +1349,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_distribute_raid_class" inherits="CEPGPHeaderButton" text="Class">
+					<Button name="BCEPGP_distribute_raid_class" inherits="BCEPGPHeaderButton" text="Class">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -1366,7 +1366,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_distribute_raid_rank" inherits="CEPGPHeaderButton" text="Rank">
+					<Button name="BCEPGP_distribute_raid_rank" inherits="BCEPGPHeaderButton" text="Rank">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -1383,14 +1383,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_distribute_raid_EP" inherits="CEPGPHeaderButton" text="EP">
+					<Button name="BCEPGP_distribute_raid_EP" inherits="BCEPGPHeaderButton" text="EP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_distribute_raid_rank">
 								<Offset>
-									<AbsDimension x="90" y="0" />
+									<AbsDimension x="125" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -1400,14 +1400,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_distribute_raid_GP" inherits="CEPGPHeaderButton" text="GP">
+					<Button name="BCEPGP_distribute_raid_GP" inherits="BCEPGPHeaderButton" text="GP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_distribute_raid_EP">
 								<Offset>
-									<AbsDimension x="35" y="0" />
+									<AbsDimension x="55" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -1417,14 +1417,14 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_distribute_raid_PR" inherits="CEPGPHeaderButton" text="PR">
+					<Button name="BCEPGP_distribute_raid_PR" inherits="BCEPGPHeaderButton" text="PR">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
 						<Anchors>
-							<Anchor point="RIGHT" relativeTo="BCEPGP_distribute_raid_GP">
+							<Anchor point="TOPRIGHT">
 								<Offset>
-									<AbsDimension x="27.5" y="0" />
+									<AbsDimension x="-5" y="-60" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -1452,7 +1452,7 @@
 			</Frame>
 			<Frame name="BCEPGP_options" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -1509,210 +1509,190 @@
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_HEAD" inherits="GameFontNormal" text="Head:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_HEAD" inherits="SlotWeightFontTemplate" text="Head:">
 							<Anchors>
 								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_weight_head">
 									<Offset>
-										<AbsDimension x="0" y="-5" />
+										<AbsDimension x="17.5" y="-5" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_NECK" inherits="GameFontNormal" text="Neck:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_NECK" inherits="SlotWeightFontTemplate" text="Neck:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_HEAD">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_HEAD">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_SHOULDER" inherits="GameFontNormal" text="Shoulder:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_SHOULDER" inherits="SlotWeightFontTemplate" text="Shoulder:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_NECK">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_NECK">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_CLOAK" inherits="GameFontNormal" text="Cloak:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_CLOAK" inherits="SlotWeightFontTemplate" text="Cloak:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_SHOULDER">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_SHOULDER">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_CHEST" inherits="GameFontNormal" text="Chest:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_CHEST" inherits="SlotWeightFontTemplate" text="Chest:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_CLOAK">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_CLOAK">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_WRIST" inherits="GameFontNormal" text="Wrist:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_WRIST" inherits="SlotWeightFontTemplate" text="Wrist:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_CHEST">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_CHEST">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_HAND" inherits="GameFontNormal" text="Hands:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_HAND" inherits="SlotWeightFontTemplate" text="Hands:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_WRIST">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_WRIST">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_WAIST" inherits="GameFontNormal" text="Waist:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_WAIST" inherits="SlotWeightFontTemplate" text="Waist:">
 							<Anchors>
-								<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_slot_HEAD">
+								<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_slot_HEAD">
 									<Offset>
-										<AbsDimension x="75" y="0" />
+										<AbsDimension x="160" y="0" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_LEGS" inherits="GameFontNormal" text="Legs:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_LEGS" inherits="SlotWeightFontTemplate" text="Legs:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_WAIST">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_WAIST">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_FEET" inherits="GameFontNormal" text="Feet:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_FEET" inherits="SlotWeightFontTemplate" text="Feet:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_LEGS">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_LEGS">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_FINGER" inherits="GameFontNormal" text="Ring:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_FINGER" inherits="SlotWeightFontTemplate" text="Ring:">
+							
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_FEET">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_FEET">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_TRINKET" inherits="GameFontNormal" text="Trinket:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_TRINKET" inherits="SlotWeightFontTemplate" text="Trinket:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_FINGER">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_FINGER">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_WEAPONMAINHAND" inherits="GameFontNormal" text="MH Weapon:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_WEAPONMAINHAND" inherits="SlotWeightFontTemplate" text="MH Weapon:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_TRINKET">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_TRINKET">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_WEAPONOFFHAND" inherits="GameFontNormal" text="OH Weapon:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_WEAPONOFFHAND" inherits="SlotWeightFontTemplate" text="OH Weapon:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_WEAPONMAINHAND">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_WEAPONMAINHAND">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_HOLDABLE" inherits="GameFontNormal" text="Holdable OH:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_HOLDABLE" inherits="SlotWeightFontTemplate" text="Holdable OH:">
 							<Anchors>
-								<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_slot_WAIST">
+								<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_slot_WAIST">
 									<Offset>
-										<AbsDimension x="95" y="0" />
+										<AbsDimension x="160" y="0" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_SHIELD" inherits="GameFontNormal" text="Shield:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_SHIELD" inherits="SlotWeightFontTemplate" text="Shield:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_HOLDABLE">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_HOLDABLE">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_RANGED" inherits="GameFontNormal" text="Ranged:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_RANGED" inherits="SlotWeightFontTemplate" text="Ranged:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_SHIELD">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_SHIELD">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_RANGEDRIGHT" inherits="GameFontNormal" text="Wand:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_RANGEDRIGHT" inherits="SlotWeightFontTemplate" text="Wand:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_RANGED">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_RANGED">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_RELIC" inherits="GameFontNormal" text="Relic:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_RELIC" inherits="SlotWeightFontTemplate" text="Relic:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_RANGEDRIGHT">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_RANGEDRIGHT">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_THROWN" inherits="GameFontNormal" text="Throwing:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_THROWN" inherits="SlotWeightFontTemplate" text="Throwing:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_RELIC">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_RELIC">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="BCEPGP_options_slot_2HWEAPON" inherits="GameFontNormal" text="2H Weapon:">
-							<Color r="1" g="1" b="1"/>
+						<FontString name="BCEPGP_options_slot_2HWEAPON" inherits="SlotWeightFontTemplate" text="2H Weapon:">
 							<Anchors>
-								<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_slot_THROWN">
+								<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT" relativeTo="BCEPGP_options_slot_THROWN">
 									<Offset>
 										<AbsDimension x="0" y="-4" />
 									</Offset>
@@ -1911,202 +1891,27 @@
 							</OnEditFocusLost>
 						</Scripts>
 					</EditBox>
-					<EditBox name="BCEPGP_options_HEAD_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="LEFT" relativePoint="LEFT">
-								<Offset>
-									<AbsDimension x="80" y="95" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_NECK_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_HEAD_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_SHOULDER_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_NECK_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_CLOAK_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_SHOULDER_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_CHEST_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_CLOAK_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_WRIST_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_CHEST_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_HAND_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_WRIST_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_WAIST_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_HEAD_weight">
-								<Offset>
-									<AbsDimension x="95" y="0" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-						<Scripts>
-							<OnShow>
-								if BCEPGP_ElvUI == 1 then
-									this:SetPoint("LEFT", BCEPGP_options_HEAD_weight, "RIGHT", 80, 0);
-								end
-							</OnShow>
-						</Scripts>
-					</EditBox>
-					<EditBox name="BCEPGP_options_LEGS_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_WAIST_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_FEET_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_LEGS_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_FINGER_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_FEET_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_TRINKET_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_FINGER_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_WEAPONMAINHAND_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_TRINKET_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_WEAPONOFFHAND_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_WEAPONMAINHAND_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_HOLDABLE_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_WAIST_weight">
-								<Offset>
-									<AbsDimension x="92.5" y="0" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_SHIELD_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_HOLDABLE_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_RANGED_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_SHIELD_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_RANGEDRIGHT_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_RANGED_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_RELIC_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_RANGEDRIGHT_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_THROWN_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_RELIC_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
-					<EditBox name="BCEPGP_options_2HWEAPON_weight" inherits="slotWeightInputBoxTemplate">
-						<Anchors>
-							<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_THROWN_weight">
-								<Offset>
-									<AbsDimension x="0" y="-11" />
-								</Offset>
-							</Anchor>
-						</Anchors>
-					</EditBox>
+					<EditBox name="BCEPGP_options_HEAD_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_NECK_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_SHOULDER_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_CLOAK_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_CHEST_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_WRIST_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_HAND_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_WAIST_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_LEGS_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_FEET_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_FINGER_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_TRINKET_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_WEAPONMAINHAND_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_WEAPONOFFHAND_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_HOLDABLE_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_SHIELD_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_RANGED_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_RANGEDRIGHT_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_RELIC_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_THROWN_weight" inherits="slotWeightInputBoxTemplate" />
+					<EditBox name="BCEPGP_options_2HWEAPON_weight" inherits="slotWeightInputBoxTemplate" />
 					<CheckButton name="BCEPGP_options_standby_ep_check" inherits="UIOptionsCheckButtonTemplate">
 						<HitRectInsets>
 							<AbsInset left="0" right="0" top="0" bottom="0" />
@@ -2141,7 +1946,7 @@
 									<Anchors>
 										<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_check">
 											<Offset>
-												<AbsDimension x="200" y="0" />
+												<AbsDimension x="250" y="0" />
 											</Offset>
 										</Anchor>
 									</Anchors>
@@ -2374,7 +2179,7 @@
 								<Anchors>
 									<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_offline_check">
 										<Offset>
-											<AbsDimension x="40" y="-17.5" />
+											<AbsDimension x="50" y="-17.5" />
 										</Offset>
 									</Anchor>
 								</Anchors>
@@ -2431,7 +2236,7 @@
 								<Anchors>
 									<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_check">
 										<Offset>
-											<AbsDimension x="230" y="0" />
+											<AbsDimension x="280" y="0" />
 										</Offset>
 									</Anchor>
 								</Anchors>
@@ -2827,7 +2632,7 @@
 			</Frame>
 			<Frame name="BCEPGP_options_page_2" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -4630,7 +4435,7 @@
 			</Frame>
 			<Frame name="BCEPGP_standby" enableMouse="true" toplevel="true" hidden="true">
 				<Size>
-					<AbsDimension x="400" y="450" />
+					<AbsDimension x="450" y="450" />
 				</Size>
 				<Anchors>
 					<Anchor point="CENTER">
@@ -4860,7 +4665,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_name" inherits="CEPGPHeaderButton" text="Name">
+					<Button name="BCEPGP_standby_name" inherits="BCEPGPHeaderButton" text="Name">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4878,7 +4683,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_class" inherits="CEPGPHeaderButton" text="Class">
+					<Button name="BCEPGP_standby_class" inherits="BCEPGPHeaderButton" text="Class">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4895,7 +4700,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_rank" inherits="CEPGPHeaderButton" text="Rank">
+					<Button name="BCEPGP_standby_rank" inherits="BCEPGPHeaderButton" text="Rank">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4912,7 +4717,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_EP" inherits="CEPGPHeaderButton" text="EP">
+					<Button name="BCEPGP_standby_EP" inherits="BCEPGPHeaderButton" text="EP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4929,7 +4734,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_GP" inherits="CEPGPHeaderButton" text="GP">
+					<Button name="BCEPGP_standby_GP" inherits="BCEPGPHeaderButton" text="GP">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4946,7 +4751,7 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="BCEPGP_standby_PR" inherits="CEPGPHeaderButton" text="PR">
+					<Button name="BCEPGP_standby_PR" inherits="BCEPGPHeaderButton" text="PR">
 						<Size>
 							<AbsDimension x="50" y="20" />
 						</Size>
@@ -4963,7 +4768,6 @@
 							</OnClick>
 						</Scripts>
 					</Button>
-					
 				</Frames>
 				<Layers>
 					<Layer level="OVERLAY">
@@ -5015,7 +4819,7 @@
 	
 	<Frame name="BCEPGP_version" enableMouse="true" toplevel="true" hidden="true">
 		<Size>
-			<AbsDimension x="400" y="450" />
+			<AbsDimension x="450" y="450" />
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER">
@@ -5238,7 +5042,7 @@
 				</Scripts>
 				</Frames>
 			</Frame>
-			<Button name="BCEPGP_version_name" inherits="CEPGPHeaderButton" text="Name">
+			<Button name="BCEPGP_version_name" inherits="BCEPGPHeaderButton" text="Name">
 				<Size>
 					<AbsDimension x="35" y="20" />
 				</Size>
@@ -5251,7 +5055,7 @@
 					</Anchor>
 				</Anchors>
 			</Button>
-			<Button name="BCEPGP_version_version" inherits="CEPGPHeaderButton" text="Version">
+			<Button name="BCEPGP_version_version" inherits="BCEPGPHeaderButton" text="Version">
 				<Size>
 					<AbsDimension x="50" y="20" />
 				</Size>
@@ -6147,7 +5951,7 @@
 	
 	<Frame name="BCEPGP_override" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
 		<Size>
-			<AbsDimension x="400" y="480"/>
+			<AbsDimension x="450" y="480"/>
 		</Size>
 		<Anchors>
 			<Anchor point="CENTER"/>

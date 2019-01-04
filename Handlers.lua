@@ -344,7 +344,7 @@ function BCEPGP_handleLoot(event, arg1, arg2)
 		else
 			HideUIPanel(BCEPGP_frame);
 			if BCEPGP_isML() == 0 then
-				BCEPGP_loot_BCEPGP_distributing:Hide();
+				distributing:Hide();
 			end
 		end
 		
