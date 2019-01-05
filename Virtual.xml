@@ -305,7 +305,7 @@
 	</Button>
 	<Button name="lootOverrideButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 			<Button name="$parentDelete" inherits="UIPanelCloseButton">
@@ -315,7 +315,7 @@
 				<Anchors>
 					<Anchor point="LEFT" relativePoint="LEFT" relativeTo="$parentitem">
 						<Offset>
-							<AbsDimension x="320" y="0" />
+							<AbsDimension x="380" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -342,7 +342,7 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parentitem" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="290" y="0"/>
+								<AbsDimension x="350" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
