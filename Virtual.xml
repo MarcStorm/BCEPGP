@@ -26,7 +26,7 @@
 				<Anchors>
 					<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 						<Offset>
-							<AbsDimension x="340" y="0" />
+							<AbsDimension x="390" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -36,9 +36,9 @@
 					<AbsDimension x="15" y="15" />
 				</Size>
 				<Anchors>
-					<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+					<Anchor point="LEFT" relativeTo="$parentTex" relativePoint="RIGHT">
 						<Offset>
-							<AbsDimension x="357.5" y="0" />
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -77,7 +77,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="280" y="0"/>
+								<AbsDimension x="260" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -86,7 +86,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="340" y="0"/>
+								<AbsDimension x="310" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -95,7 +95,7 @@
 					<Anchors>
 						<Anchor point="RIGHT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="420" y="0"/>
+								<AbsDimension x="380" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -458,7 +458,7 @@
 	</Button>
 	<Button name="StandbyButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 			<Button name="$parentClose" inherits="UiPanelCloseButton">
@@ -486,7 +486,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="0" y="0"/>
+								<AbsDimension x="-5" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -522,7 +522,7 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="295" y="0"/>
+								<AbsDimension x="320" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -531,7 +531,7 @@
 					<Anchors>
 						<Anchor point="CENTER" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="340" y="0"/>
+								<AbsDimension x="380" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -574,7 +574,9 @@
 			<OnShow>
 				local name = strsub(this:GetName(), 16, strfind(this:GetName(), "_EP")-1);
 				local target = getglobal("BCEPGP_options_" .. name .. "_auto_check");
-				this:SetPoint('RIGHT', target, 'LEFT', -30, 0);
+				if not BCEPGP_ElvUI then
+					this:SetPoint('RIGHT', target, 'LEFT', -30, 0);
+				end;
 			</OnShow>
 		</Scripts>
 	</EditBox>
