@@ -332,11 +332,11 @@ function BCEPGP_handleLoot(event, arg1, arg2)
 			HideUIPanel(BCEPGP_frame);
 		end
 		HideUIPanel(BCEPGP_distribute_popup);
-		HideUIPanel(BCEPGP_loot_BCEPGP_distributing);
 		--HideUIPanel(BCEPGP_button_loot_dist);
 		HideUIPanel(BCEPGP_loot);
 		HideUIPanel(BCEPGP_distribute);
 		HideUIPanel(BCEPGP_loot_BCEPGP_distributing);
+		HideUIPanel(BCEPGP_button_loot_dist);
 		if UnitInRaid("player") then
 			BCEPGP_toggleFrame(BCEPGP_raid);
 		elseif GetGuildRosterInfo(1) then

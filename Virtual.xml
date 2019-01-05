@@ -357,11 +357,29 @@
 				PlaySound("igMainMenuOptionCheckBoxOn");
 			</OnClick>
 			<OnEnter>
-				BCEPGP_setOverrideLink(this:GetName() .. "item", "enter");
+				if GetItemInfo(getglobal(this:GetName() .. "item"):GetText()) then
+					BCEPGP_setOverrideLink(this:GetName() .. "item", "enter");
+				end
 			</OnEnter>
 			<OnLeave>
-				BCEPGP_setOverrideLink(this:GetName() .. "item", "leave");
+				if GetItemInfo(getglobal(this:GetName() .. "item"):GetText()) then
+					BCEPGP_setOverrideLink(this:GetName() .. "item", "leave");
+				end
 			</OnLeave>
+			<OnShow>
+				local item = getglobal(this:GetName() .. "item"):GetText();
+				if item then
+					if GetItemInfo(item) then
+						local _, link = GetItemInfo(item);
+						if link and not OVERRIDE_INDEX[link] then
+							local gp = OVERRIDE_INDEX[item];
+							OVERRIDE_INDEX[item] = nil;
+							OVERRIDE_INDEX[link] = gp;
+							BCEPGP_UpdateOverrideScrollBar();
+						end
+					end
+				end
+			</OnShow>
 		</Scripts>
 		<HighlightTexture file="Interface\QuestFrame\UI-QuestTitleHighlight" alphaMode="ADD"/>
 	</Button>

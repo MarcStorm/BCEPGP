@@ -86,7 +86,7 @@
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="BCEPGP_button_loot_dist" inherits="GameMenuButtonTemplate" text="Loot Distribution">
+			<Button name="BCEPGP_button_loot_dist" inherits="GameMenuButtonTemplate" text="Loot Distribution" hidden="true">
 				<Size>
 					<AbsDimension x="140" y="21" />
 				</Size>
@@ -108,9 +108,7 @@
 						BCEPGP_toggleFrame("BCEPGP_loot");
 						BCEPGP_mode = "loot";
 						BCEPGP_cleanTable();
-						if LootFrame:IsVisible() == 1 then
-							BCEPGP_LootFrame_Update();
-						end
+						BCEPGP_LootFrame_Update();
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -5564,11 +5562,13 @@
 							BCEPGP_print("Enter an item name", true);
 							return;
 						end
-						local _, item = GetItemInfo(BCEPGP_override_item_name:GetText());
-						if not item then
-							BCEPGP_print("Could not find the item " .. BCEPGP_override_item_name:GetText(), true);
-							return;
-						end
+						local item;
+						if not GetItemInfo(BCEPGP_override_item_name:GetText()) then
+							item = BCEPGP_override_item_name:GetText();
+							BCEPGP_print(item .. " not found in cache. This item will be updated when cached");
+						else
+							_, item = GetItemInfo(BCEPGP_override_item_name:GetText());
+						end;
 						local gp;
 						if BCEPGP_override_item_gp:GetText() == "" then
 							gp = 0;
@@ -5629,11 +5629,13 @@
 								BCEPGP_print("Enter an item name", true);
 							return;
 						end
-						local _, item = GetItemInfo(BCEPGP_override_item_name:GetText());
-						if not item then
-							BCEPGP_print("Could not find the item " .. BCEPGP_override_item_name:GetText(), true);
-							return;
-						end
+						local item;
+						if not GetItemInfo(BCEPGP_override_item_name:GetText()) then
+							item = BCEPGP_override_item_name:GetText();
+							BCEPGP_print(item .. " not found in cache. This item will be updated when cached");
+						else
+							_, item = GetItemInfo(BCEPGP_override_item_name:GetText());
+						end;
 						local gp;
 						if BCEPGP_override_item_gp:GetText() == "" then
 							gp = 0;
