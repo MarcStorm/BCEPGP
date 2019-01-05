@@ -16,7 +16,7 @@
 	
 	<Button name="LootDistButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 			<Button name="$parentTex">
@@ -117,7 +117,7 @@
 	</Button>
 	<Button name="GuildButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 		</Frames>
@@ -136,7 +136,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="85" y="0"/>
+								<AbsDimension x="90" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -145,7 +145,7 @@
 					<Anchors>
 						<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
 							<Offset>
-								<AbsDimension x="160" y="0"/>
+								<AbsDimension x="165" y="0"/>
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -192,7 +192,7 @@
 	</Button>
 	<Button name="RaidButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 		</Frames>
@@ -551,7 +551,7 @@
 	
 	<EditBox name="epValInputBoxTemplate" inherits="InputBoxTemplate" numeric="true" virtual="true">
 		<Size>
-			<AbsDimension x="80" y="10" />
+			<AbsDimension x="50" y="10" />
 		</Size>
 		<Scripts>
 			<OnLoad>
@@ -571,6 +571,11 @@
 					BCEPGP_print("Updated EP awarded for " .. name);
 				end
 			</OnEditFocusLost>
+			<OnShow>
+				local name = strsub(this:GetName(), 16, strfind(this:GetName(), "_EP")-1);
+				local target = getglobal("BCEPGP_options_" .. name .. "_auto_check");
+				this:SetPoint('RIGHT', target, 'LEFT', -30, 0);
+			</OnShow>
 		</Scripts>
 	</EditBox>
 	
@@ -607,13 +612,6 @@
 		<HitRectInsets>
 			<AbsInset left="0" right="0" top="0" bottom="0" />
 		</HitRectInsets>
-		<Anchors>
-			<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
-				<Offset>
-					<AbsDimension x="0" y="5" />
-				</Offset>
-			</Anchor>
-		</Anchors>
 		<Scripts>
 			<OnLoad>
 				this:RegisterForClicks('LeftButtonDown');

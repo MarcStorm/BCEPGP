@@ -441,7 +441,7 @@
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_name">
 								<Offset>
-									<AbsDimension x="85" y="0" />
+									<AbsDimension x="90" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -458,7 +458,7 @@
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_class">
 								<Offset>
-									<AbsDimension x="75" y="0" />
+									<AbsDimension x="80" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -2686,7 +2686,7 @@
 								getglobal("BCEPGP_options_Prince Malchezaar_EP_value"):SetText(EPVALS["Prince Malchezaar"]);
 								getglobal("BCEPGP_options_Nightbane_EP_value"):SetText(EPVALS["Nightbane"]);
 								
-								getglobal("BCEPGP_options_Attumen The Huntsman_auto_check"):SetChecked(AUTOEP["Attumen the Huntsman"]);
+								getglobal("BCEPGP_options_Attumen the Huntsman_auto_check"):SetChecked(AUTOEP["Attumen the Huntsman"]);
 								getglobal("BCEPGP_options_Tenris Mirkblood_auto_check"):SetChecked(AUTOEP["Tenris Mirkblood"]);
 								getglobal("BCEPGP_options_Moroes_auto_check"):SetChecked(AUTOEP["Moroes"]);
 								getglobal("BCEPGP_options_Maiden of Virtue_auto_check"):SetChecked(AUTOEP["Maiden of Virtue"]);
@@ -2874,7 +2874,7 @@
 					</Button>
 					<Frame name="BCEPGP_options_page_2_karazhan" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -3004,7 +3004,7 @@
 							</Layer>
 						</Layers>
 						<Frames>
-							<CheckButton name="BCEPGP_options_Attumen The Huntsman_auto_check" inherits="AutoAwardEPCheckBox">
+							<CheckButton name="BCEPGP_options_Attumen the Huntsman_auto_check" inherits="AutoAwardEPCheckBox">
 								<Anchors>
 									<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
 										<Offset>
@@ -3015,7 +3015,7 @@
 							</CheckButton>
 							<CheckButton name="BCEPGP_options_Tenris Mirkblood_auto_check" inherits="AutoAwardEPCheckBox">
 								<Anchors>
-									<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="BCEPGP_options_Attumen The Huntsman_auto_check">
+									<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="BCEPGP_options_Attumen the Huntsman_auto_check">
 										<Offset>
 											<AbsDimension x="0" y="3" />
 										</Offset>
@@ -3112,155 +3112,23 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_Attumen the Huntsman_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Attumen The Huntsman_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Tenris Mirkblood_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Tenris Mirkblood_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Moroes_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Moroes_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Maiden of Virtue_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Maiden of Virtue_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_The Opera Event_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_The Opera Event_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_The Curator_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_The Curator_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Terestian Illhoof_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Terestian Illhoof_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Shade of Aran_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Shade of Aran_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Netherspite_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Netherspite_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_The Chess Event_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_The Chess Event_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Prince Malchezaar_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="20" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Prince Malchezaar_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Nightbane_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="20" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Nightbane_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_Attumen the Huntsman_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Tenris Mirkblood_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Moroes_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Maiden of Virtue_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_The Opera Event_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_The Curator_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Terestian Illhoof_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Shade of Aran_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Netherspite_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_The Chess Event_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Prince Malchezaar_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Nightbane_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Frame name="BCEPGP_options_page_2_mag_gruul_tk" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -3403,95 +3271,18 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_Magtheridon_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Magtheridon_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_High King Maulgar_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_High King Maulgar_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Gruul the Dragonkiller_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Gruul the Dragonkiller_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Al'ar_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Al'ar_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Void Reaver_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Void Reaver_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_High Astromancer Solarian_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_High Astromancer Solarian_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Kael'thas Sunstrider_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Kael'thas Sunstrider_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_Magtheridon_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_High King Maulgar_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Gruul the Dragonkiller_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Al'ar_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Void Reaver_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_High Astromancer Solarian_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Kael'thas Sunstrider_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Frame name="BCEPGP_options_page_2_ssc" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -3615,83 +3406,17 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_Hydross the Unstable_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Hydross the Unstable_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_The Lurker Below_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_The Lurker Below_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Leotheras the Blind_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Leotheras the Blind_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Fathom-Lord Karathress_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Fathom-Lord Karathress_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Morogrim Tidewalker_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Morogrim Tidewalker_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Lady Vashj_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Lady Vashj_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_Hydross the Unstable_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_The Lurker Below_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Leotheras the Blind_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Fathom-Lord Karathress_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Morogrim Tidewalker_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Lady Vashj_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Frame name="BCEPGP_options_page_2_hyjal" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -3796,71 +3521,16 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_Rage Winterchill_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Rage Winterchill_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Anetheron_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Anetheron_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Kaz'rogal_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Kaz'rogal_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Azgalor_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Azgalor_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Archimonde_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Archimonde_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_Rage Winterchill_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Anetheron_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Kaz'rogal_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Azgalor_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Archimonde_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Frame name="BCEPGP_options_page_2_bt" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -4041,119 +3711,20 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_High Warlord Naj'entus_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_High Warlord Naj'entus_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Supremus_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Supremus_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Shade of Akama_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Shade of Akama_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Teron Gorefiend_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Teron Gorefiend_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Gurtogg Bloodboil_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Gurtogg Bloodboil_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Reliquary of Souls_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Reliquary of Souls_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Mother Shahraz_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Mother Shahraz_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Illidari Council_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Illidari Council_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Illidan Stormrage_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Illidan Stormrage_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_High Warlord Naj'entus_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Supremus_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Shade of Akama_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Teron Gorefiend_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Gurtogg Bloodboil_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Reliquary of Souls_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Mother Shahraz_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Illidari Council_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Illidan Stormrage_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Frame name="BCEPGP_options_page_2_swp" enableMouse="true" toplevel="true" hidden="true">
 						<Size>
-							<AbsDimension x="350" y="300" />
+							<AbsDimension x="390" y="300" />
 						</Size>
 						<Anchors>
 							<Anchor point="TOPLEFT">
@@ -4277,78 +3848,12 @@
 									</Anchor>
 								</Anchors>
 							</CheckButton>
-							<EditBox name="BCEPGP_options_Kalecgos_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Kalecgos_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Brutallus_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Brutallus_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Felmyst_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Felmyst_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_The Eredar Twins_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_The Eredar Twins_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_M'uru_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_M'uru_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
-							<EditBox name="BCEPGP_options_Kil'jaeden_EP_value" inherits="epValInputBoxTemplate">
-								<Size>
-									<AbsDimension x="80" y="10" />
-								</Size>
-								<Anchors>
-									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_Reliquary of Souls_auto_check">
-										<Offset>
-											<AbsDimension x="-120" y="0" />
-										</Offset>
-									</Anchor>
-								</Anchors>
-							</EditBox>
+							<EditBox name="BCEPGP_options_Kalecgos_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Brutallus_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Felmyst_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_The Eredar Twins_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_M'uru_EP_value" inherits="epValInputBoxTemplate" />
+							<EditBox name="BCEPGP_options_Kil'jaeden_EP_value" inherits="epValInputBoxTemplate" />
 						</Frames>
 					</Frame>
 					<Button name="BCEPGP_options_button_prev">
@@ -4817,7 +4322,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_version" enableMouse="true" toplevel="true" hidden="true">
+	<Frame name="BCEPGP_version" enableMouse="true" toplevel="true" hidden="true" movable="true" parent="UIParent">
 		<Size>
 			<AbsDimension x="450" y="450" />
 		</Size>
@@ -5155,10 +4660,10 @@
 				this:RegisterForDrag("LeftButton");
 			</OnLoad>
 			<OnDragStart>
-				BCEPGP_frame:StartMoving()
+				this:StartMoving();
 			</OnDragStart>
 			<OnDragStop>
-				BCEPGP_frame:StopMovingOrSizing()
+				this:StopMovingOrSizing();
 			</OnDragStop>
 		</Scripts>
 	</Frame>
