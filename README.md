@@ -44,8 +44,7 @@ To install:
   3. Rename the extracted folder from bcepgp-master to bcepgp
 
 **Note:**
-If you are getting the message "Error - Player not found in guild roster." when the player is definitely in your guild, then ensure that the player is online, and if they're not online, then ensure that Show Offline Members is checked in your guild tab.
-Another restriction of the 1.12.1 API is that addons cannot read guild members that you cannot see. Meaning, if the player is offline and you're not viewing offline members, then the addon cannot see them either.
+If you get an error when adding an item to override for example (such as item not found), but you're sure you've spelled it correctly, then the item likely does not exist in your cache. This is a restriction in the API, items are cached as you see them in game. After seeing this item, you should not receive this error again (unless you delete your cache). This error should not prevent any functionality.
 
 Patch Version: 2.4.3
 
