@@ -4557,7 +4557,7 @@
 				<Anchors>
 					<Anchor point="RIGHT" relativeTo="BCEPGP_version_name">
 						<Offset>
-							<AbsDimension x="200" y="0" />
+							<AbsDimension x="260" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>

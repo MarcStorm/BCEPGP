@@ -267,7 +267,7 @@
 	</Button>
 	<Button name="versionButtonTemplate" virtual="true">
 		<Size>
-			<AbsDimension x="360" y="15"/>
+			<AbsDimension x="420" y="15"/>
 		</Size>
 		<Frames>
 		</Frames>
