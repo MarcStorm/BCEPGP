@@ -664,7 +664,6 @@
 			</OnLoad>
 			<OnClick>
 				local id = this:GetID();
-				BCEPGP_print(id);
 				if this:GetChecked() then 
 					STANDBYRANKS[id][2] = true;
 				else
