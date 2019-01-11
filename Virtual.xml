@@ -653,4 +653,29 @@
 	<FontString name="SlotWeightFontTemplate" inherits="GameFontNormal" virtual="true">
 		<Color r="1" g="1" b="1"/>
 	</FontString>
+
+	<CheckButton name="StandbyEPRankCheckBox" inherits="UIOptionsCheckButtonTemplate" virtual="true">
+		<HitRectInsets>
+			<AbsInset left="0" right="0" top="0" bottom="0" />
+		</HitRectInsets>
+		<Scripts>
+			<OnLoad>
+				this:RegisterForClicks('LeftButtonDown');
+			</OnLoad>
+			<OnClick>
+				local id = this:GetID();
+				BCEPGP_print(id);
+				if this:GetChecked() then 
+					STANDBYRANKS[id][2] = true;
+				else
+					STANDBYRANKS[id][2] = false;
+				end
+			</OnClick>
+			<OnShow>
+				local target = getglobal("BCEPGP_options_standby_ep_rank_" .. this:GetID());
+				this:SetPoint("LEFT", target, "LEFT", 100, 0);
+			</OnShow>
+		</Scripts>
+	</CheckButton>
+	
 </Ui>
