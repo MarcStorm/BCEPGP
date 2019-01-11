@@ -592,7 +592,9 @@
 			<OnShow>
 				local name = strsub(this:GetName(), 16, strfind(this:GetName(), "_EP")-1);
 				local target = getglobal("BCEPGP_options_" .. name .. "_auto_check");
-				if not BCEPGP_ElvUI then
+				if BCEPGP_ElvUI then
+					this:SetPoint('RIGHT', target, 'LEFT', 0, 0);
+				else
 					this:SetPoint('RIGHT', target, 'LEFT', -30, 0);
 				end;
 			</OnShow>
