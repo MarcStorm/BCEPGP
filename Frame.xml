@@ -473,6 +473,11 @@
 							<OnClick>
 								BCEPGP_setCriteria(5, "Guild");
 							</OnClick>
+							<OnShow>
+								if BCEPGP_ElvUI then
+									this:SetPoint("RIGHT", "BCEPGP_guild_rank", 105, 0);
+								end
+							</OnShow>
 						</Scripts>
 					</Button>
 					<Button name="BCEPGP_guild_GP" inherits="BCEPGPHeaderButton" text="GP">
@@ -489,7 +494,7 @@
 						<Scripts>
 							<OnClick>
 								BCEPGP_setCriteria(6, "Guild");
-							</OnClick>
+							</OnClick>							
 						</Scripts>
 					</Button>
 					<Button name="BCEPGP_guild_PR" inherits="BCEPGPHeaderButton" text="PR">
@@ -1907,9 +1912,9 @@
 							<AbsInset left="0" right="0" top="0" bottom="0" />
 						</HitRectInsets>
 						<Anchors>
-							<Anchor point="RIGHT" relativePoint="LEFT">
+							<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep">
 								<Offset>
-									<AbsDimension x="155" y="-35" />
+									<AbsDimension x="5" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -2143,9 +2148,9 @@
 									<AbsInset left="0" right="0" top="0" bottom="0" />
 								</HitRectInsets>
 								<Anchors>
-									<Anchor point="TOP" relativePoint="BOTTOM" relativeTo="BCEPGP_options_standby_ep_val">
+									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_offline">
 										<Offset>
-											<AbsDimension x="90" y="0" />
+											<AbsDimension x="5" y="0" />
 										</Offset>
 									</Anchor>
 								</Anchors>
@@ -2167,9 +2172,9 @@
 									<AbsInset left="0" right="0" top="0" bottom="0" />
 								</HitRectInsets>
 								<Anchors>
-									<Anchor point="RIGHT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_offline_check">
+									<Anchor point="LEFT" relativePoint="RIGHT" relativeTo="BCEPGP_options_standby_ep_accept_whispers">
 										<Offset>
-											<AbsDimension x="50" y="-17.5" />
+											<AbsDimension x="5" y="0" />
 										</Offset>
 									</Anchor>
 								</Anchors>
@@ -2536,9 +2541,9 @@
 									<AbsDimension x="150" y="25"/>
 								</Size>
 								<Anchors>
-									<Anchor point="BOTTOM" relativePoint="BOTTOMLEFT" relativeTo="BCEPGP_options_standby_ep_message_val">
+									<Anchor point="BOTTOM" relativePoint="BOTTOM" relativeTo="BCEPGP_options">
 										<Offset>
-											<AbsDimension x="-50" y="-50"/>
+											<AbsDimension x="0" y="25"/>
 										</Offset>
 									</Anchor>
 								</Anchors>
