@@ -129,7 +129,7 @@ function BCEPGP_IncAddonMsg(message, sender)
 		end
 		BCEPGP_updateGuild();
 		if slot then
-			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-"..BCEPGP_DistID.."~"..BCEPGP_distSlot);
+			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-"..BCEPGP_DistID.."~"..slot);
 		else
 			BCEPGP_SendAddonMsg(arg2.."-BCEPGP_distributing-nil~nil");
 		end
