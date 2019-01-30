@@ -426,6 +426,9 @@ end
 function BCEPGP_toggleStandbyRanks(show)
 	if show then
 		for i = 1, 10 do
+			STANDBYRANKS[i][1] = GuildControlGetRankName(i);
+		end
+		for i = 1, 10 do
 			if STANDBYRANKS[i][1] ~= "" then
 				getglobal("BCEPGP_options_standby_ep_rank_"..i):Show();
 				getglobal("BCEPGP_options_standby_ep_rank_"..i):SetText(tostring(STANDBYRANKS[i][1]));
@@ -622,6 +625,9 @@ function BCEPGP_updateGuild()
 		return;
 	else
 		ShowUIPanel(BCEPGP_button_guild);
+		for i = 1, 10 do
+			STANDBYRANKS[i][1] = GuildControlGetRankName(i);
+		end
 	end;
 	GuildRoster();
 end
