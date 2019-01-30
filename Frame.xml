@@ -4113,7 +4113,7 @@
 		<Frames>
 			<Frame name="BCEPGP_version_scrollframe">
 				<Size>
-					<AbsDimension x="360" y="300"/>
+					<AbsDimension x="410" y="300"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="BCEPGP_version" relativePoint="TOPLEFT">
