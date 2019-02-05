@@ -780,3 +780,56 @@ function BCEPGP_button_options:OnClick()
 	end
 	BCEPGP_populateFrame();
 end
+
+function UIDropDownMenu_Initialize(frame, initFunction, displayMode, level, menuList, search)
+	if ( not frame ) then
+		frame = this;
+	end
+
+	frame.menuList = menuList;
+
+	if ( frame:GetName() ~= UIDROPDOWNMENU_OPEN_MENU ) then
+		UIDROPDOWNMENU_MENU_LEVEL = 1;
+	end
+
+	-- Set the frame that's being intialized
+	UIDROPDOWNMENU_INIT_MENU = frame:GetName();
+
+	-- Hide all the buttons
+	local button, dropDownList;
+	for i = 1, UIDROPDOWNMENU_MAXLEVELS, 1 do
+		dropDownList = getglobal("DropDownList"..i);
+		if ( i >= UIDROPDOWNMENU_MENU_LEVEL or frame:GetName() ~= UIDROPDOWNMENU_OPEN_MENU ) then
+			dropDownList.numButtons = 0;
+			dropDownList.maxWidth = 0;
+			for j=1, UIDROPDOWNMENU_MAXBUTTONS, 1 do
+				button = getglobal("DropDownList"..i.."Button"..j);
+				button:Hide();
+			end
+			dropDownList:Hide();
+		end
+	end
+	frame:SetHeight(UIDROPDOWNMENU_BUTTON_HEIGHT * 2);
+	
+	-- Set the initialize function and call it.  The initFunction populates the dropdown list.
+	if ( initFunction ) then
+		frame.initialize = initFunction;
+		initFunction(level, frame.menuList, search);
+	end
+
+	-- Change appearance based on the displayMode
+	if ( displayMode == "MENU" ) then
+		getglobal(frame:GetName().."Left"):Hide();
+		getglobal(frame:GetName().."Middle"):Hide();
+		getglobal(frame:GetName().."Right"):Hide();
+		getglobal(frame:GetName().."ButtonNormalTexture"):SetTexture("");
+		getglobal(frame:GetName().."ButtonDisabledTexture"):SetTexture("");
+		getglobal(frame:GetName().."ButtonPushedTexture"):SetTexture("");
+		getglobal(frame:GetName().."ButtonHighlightTexture"):SetTexture("");
+		getglobal(frame:GetName().."Button"):ClearAllPoints();
+		getglobal(frame:GetName().."Button"):SetPoint("LEFT", frame:GetName().."Text", "LEFT", -9, 0);
+		getglobal(frame:GetName().."Button"):SetPoint("RIGHT", frame:GetName().."Text", "RIGHT", 6, 0);
+		frame.displayMode = "MENU";
+	end
+
+end

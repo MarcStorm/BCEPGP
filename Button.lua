@@ -221,3 +221,18 @@ function BCEPGP_distribute_popup_OnEvent(event)
 		end
 	end
 end
+
+function BCEPGP_initRestoreDropdown(level, menuList, search)
+	for k, _ in pairs(RECORDS) do
+		local entry = UIDropDownMenu_CreateInfo();
+		entry.text = k;
+		entry.func = BCEPGP_restoreDropdownOnClick;
+		UIDropDownMenu_AddButton(entry);
+	end
+end
+
+function BCEPGP_restoreDropdownOnClick()
+	if (not checked) then
+		UIDropDownMenu_SetSelectedName(BCEPGP_restoreDropdown, this:GetText());
+	end
+end

@@ -1,5 +1,6 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\FrameXML\UI.xsd">
+	<Script File="Button.lua"/>
 		
 	<Frame name="BCEPGP_frame" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true">
 		<Size>
@@ -4113,7 +4114,7 @@
 		<Frames>
 			<Frame name="BCEPGP_version_scrollframe">
 				<Size>
-					<AbsDimension x="410" y="300"/>
+					<AbsDimension x="410--" y="300"/>
 				</Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="BCEPGP_version" relativePoint="TOPLEFT">
@@ -4977,26 +4978,23 @@
 			</Layer>
 		</Layers>
 		<Frames>
-			<EditBox name="BCEPGP_guild_log_restore_name" inherits="InputBoxTemplate">
-				<Size>
-					<AbsDimension x="250" y="20" />
-				</Size>
+			<Button name="BCEPGP_restoreDropdown" inherits="UIDropDownMenuTemplate">
 				<Anchors>
-					<Anchor point="CENTER">
+					<Anchor point="CENTER" relativePoint="BOTTOM">
 						<Offset>
-							<AbsDimension x="0" y="-15" />
+							<AbsDimension x="0" y="70" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetAutoFocus(false);
+						UIDropDownMenu_Initialize(this, BCEPGP_initRestoreDropdown);
 					</OnLoad>
-					<OnEnterPressed>
-						this:ClearFocus();
-					</OnEnterPressed>
+					<OnShow>
+						UIDropDownMenu_SetWidth(250, BCEPGP_restoreDropdown);
+					</OnShow>
 				</Scripts>
-			</EditBox>
+			</Button>
 			<Button name="BCEPGP_guild_log_restore_cancel" inherits="GameMenuButtonTemplate" text="Cancel">
 				<Size>
 					<AbsDimension x="75" y="30"/>
@@ -5028,7 +5026,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						local name = BCEPGP_guild_log_restore_name:GetText();
+						local name = UIDropDownMenu_GetSelectedName(BCEPGP_restoreDropdown);
 						BCEPGP_updateGuild();
 						if RECORDS[name] ~= nil and BCEPGP_confirmrestore then
 							if GetGuildRosterShowOffline() == nil then
@@ -5073,7 +5071,7 @@
 		<Scripts>
 			<OnLoad>
 				this:RegisterForDrag("LeftButton");
-				BCEPGP_guild_log_restore_desc:SetText("Enter the name of the record\nyou want to restore\n|c00FF0000Make sure this is what you want to do.\nThis will overwrite ALL current guild EPGP\nstandings with the record.");
+				BCEPGP_guild_log_restore_desc:SetText("Select the record you would like to restore\n\n|c00FF0000Make sure this is what you want to do.\nThis will overwrite ALL current guild EPGP\nstandings with the record.");
 			</OnLoad>
 			<OnDragStart>
 				this:StartMoving();
@@ -5081,6 +5079,9 @@
 			<OnDragStop>
 				this:StopMovingOrSizing();
 			</OnDragStop>
+			<OnHide>
+				CloseDropDownMenus();
+			</OnHide>
 		</Scripts>
 	</Frame>
 	
