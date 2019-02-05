@@ -488,7 +488,7 @@
 						<Anchors>
 							<Anchor point="RIGHT" relativeTo="BCEPGP_guild_EP">
 								<Offset>
-									<AbsDimension x="55" y="0" />
+									<AbsDimension x="47.5" y="0" />
 								</Offset>
 							</Anchor>
 						</Anchors>
