@@ -835,7 +835,8 @@ function UIDropDownMenu_Initialize(frame, initFunction, displayMode, level, menu
 end
 
 function BCEPGP_getDebugInfo()
-	local info = "<details><summary>Version</summary>" .. BCEPGP_VERSION .. "</details><br />";
+	local info = "<details><summary>Debug Info</summary>";
+	info = info .. "<details><summary>Version</summary>" .. BCEPGP_VERSION .. "</details><br />";
 	info = info .. "<details><summary>GP Modifier</summary>" .. MOD .. "</details><br />";
 	info = info .. "<details><summary>Auto EP</summary><br />";
 	for k, v in pairs(AUTOEP) do
