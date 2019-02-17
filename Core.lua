@@ -135,6 +135,9 @@ function SlashCmdList.BCEPGP(msg, editbox)
 		else
 			BCEPGP_print("Debug Mode Disabled");
 		end
+		
+	elseif strfind(msg, "debug") then
+		BCEPGP_debuginfo:Show();
 	
 	elseif strfind(msg, "setdefaultchannel") then
 		if msg == "setdefaultchannel" or msg == "setdefaultchannel " then
