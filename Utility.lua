@@ -833,3 +833,68 @@ function UIDropDownMenu_Initialize(frame, initFunction, displayMode, level, menu
 	end
 
 end
+
+function BCEPGP_getDebugInfo()
+	local info = "<details><summary>Version</summary>" .. BCEPGP_VERSION .. "</details><br />";
+	info = info .. "<details><summary>GP Modifier</summary>" .. MOD .. "</details><br />";
+	info = info .. "<details><summary>Auto EP</summary><br />";
+	for k, v in pairs(AUTOEP) do
+		if v then
+			info = info .. "<details><summary>" .. k .. "</summary>True</details><br />";
+		else
+			info = info .. "<details><summary>" .. k .. "</summary>False</details><br />";
+		end
+	end
+	info = info .. "</details><br />";
+	info = info .. "<details><summary>EP Values</summary><br />";
+	for k, v in pairs(EPVALS) do
+		info = info .. "<details><summary>" .. k .. "</summary>" .. v .. "</details><br />";
+	end
+	info = info .. "</details><br />";
+	info = info .. "<details><summary>Base GP</summary>" .. BASEGP .. "</details><br />";
+	if STANDBYEP then
+		info = info .. "<details><summary>Standby EP</summary>True</details><br />";
+	else
+		info = info .. "<details><summary>Standby EP</summary>False</details><br />";
+	end
+	if STANDBYOFFLINE then
+		info = info .. "<details><summary>Standby Offline</summary>True</details><br />";
+	else
+		info = info .. "<details><summary>Standby Offline</summary>False</details><br />";
+	end
+	info = info .. "<details><summary>Standby Percent</summary>" .. STANDBYPERCENT .. "</details><br />";
+	info = info .. "<details><summary>Standby Guild Ranks</summary><br />";
+	for k, v in pairs(STANDBYRANKS) do
+		if v[1] ~= "" then
+			if v[2] then
+				info = info .. "<details><summary>" .. v[1] .. "</summary>True</details><br />";
+			else
+				info = info .. "<details><summary>" .. v[1] .. "</summary>False</details><br />";
+			end
+		end
+	end
+	info = info .. "</details><br />";
+	info = info .. "<details><summary>Slot Weights</summary><br />";
+	for k, _ in pairs(SLOTWEIGHTS) do
+		info = info .. "<details><summary>" .. k .. "</summary>" .. SLOTWEIGHTS[k] .. "</details><br />";
+	end
+	info = info .. "</details><br />";
+	if BCEPGP_standby_accept_whispers then
+		info = info .. "<details><summary>Standby Accept Whispers</summary>True</details><br />";
+	else
+		info = info .. "<details><summary>Standby Accept Whispers</summary>False</details><br />";
+	end
+	if BCEPGP_standby_byrank then
+		info = info .. "<details><summary>Standby EP by Rank</summary>True</details><br />";
+	else
+		info = info .. "<details><summary>Standby EP by Rank</summary>False</details><br />";
+	end
+	if BCEPGP_standby_manual then
+		info = info .. "<details><summary>Standby EP Manual Delegation</summary>True</details><br />";
+	else
+		info = info .. "<details><summary>Standby EP Manual Delegation</summary>False</details><br />";
+	end
+	info = info .. "<details><summary>Standby EP Whisper Keyphrase</summary>" .. BCEPGP_standby_whisper_msg .. "</details><br />";
+	info = info .. "</details><br />";
+	return info;
+end
