@@ -895,6 +895,6 @@ function BCEPGP_getDebugInfo()
 		info = info .. "<details><summary>Standby EP Manual Delegation</summary>False</details><br />";
 	end
 	info = info .. "<details><summary>Standby EP Whisper Keyphrase</summary>" .. BCEPGP_standby_whisper_msg .. "</details><br />";
-	info = info .. "</details><br />";
+	info = info .. "</details>";
 	return info;
 end
