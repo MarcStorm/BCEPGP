@@ -15,3 +15,6 @@ The error message provided when the issue occurs, if applicable.
 
 **Additional context**
 Add any other context about the problem here.
+
+**Debug info**
+Type /bce debug in-game and copy and paste the string it produces here.
