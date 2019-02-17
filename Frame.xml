@@ -4704,7 +4704,7 @@
 				</Anchors>
 				<Scripts>
 					<OnLoad>
-						this:SetAutoFocus(true);
+						this:SetAutoFocus(false);
 						this:SetText("0");
 					</OnLoad>
 					<OnEnterPressed>
