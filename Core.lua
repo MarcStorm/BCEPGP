@@ -128,7 +128,7 @@ function SlashCmdList.BCEPGP(msg, editbox)
 	elseif strfind(msg, "currentchannel") then
 		BCEPGP_print("Current channel to report: " .. getCurChannel());
 		
-	elseif strfind(msg, "debug") then
+	elseif strfind(msg, "debugmode") then
 		BCEPGP_debugMode = not BCEPGP_debugMode;
 		if BCEPGP_debugMode then
 			BCEPGP_print("Debug Mode Enabled");
