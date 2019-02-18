@@ -781,7 +781,7 @@ function BCEPGP_button_options:OnClick()
 	BCEPGP_populateFrame();
 end
 
-function UIDropDownMenu_Initialize(frame, initFunction, displayMode, level, menuList, search)
+function BCEPGP_UIDropDownMenu_Initialize(frame, initFunction, displayMode, level, menuList, search)
 	if ( not frame ) then
 		frame = this;
 	end
