@@ -3,7 +3,7 @@
 	<Script File="Button.lua"/>
 	<Script File="Utility.lua"/>
 		
-	<Frame name="BCEPGP_frame" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true">
+	<Frame name="BCEPGP_frame" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="450" y="480" />
 		</Size>
@@ -4089,7 +4089,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_version" enableMouse="true" toplevel="true" hidden="true" movable="true" parent="UIParent">
+	<Frame name="BCEPGP_version" enableMouse="true" toplevel="true" hidden="true" movable="true" parent="UIParent" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="450" y="450" />
 		</Size>
@@ -4435,7 +4435,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_distribute_popup" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true">
+	<Frame name="BCEPGP_distribute_popup" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="300" y="100"/>
 		</Size>
@@ -4566,7 +4566,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_context_popup" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_context_popup" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="300" y="175"/>
 		</Size>
@@ -4757,7 +4757,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_save_guild_logs" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_save_guild_logs" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="300" y="175"/>
 		</Size>
@@ -4924,7 +4924,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_restore_guild_logs" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_restore_guild_logs" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="300" y="175"/>
 		</Size>
@@ -5084,7 +5084,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_settings_import" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_settings_import" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="300" y="175"/>
 		</Size>
@@ -5219,7 +5219,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_override" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_override" toplevel="true" frameStrata="DIALOG" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="450" y="480"/>
 		</Size>
@@ -5654,7 +5654,7 @@
 		</Scripts>
 	</Frame>
 	
-	<Frame name="BCEPGP_traffic" toplevel="true" frameStrata="HIGH" enableMouse="true" parent="UIParent" hidden="true" movable="true">
+	<Frame name="BCEPGP_traffic" toplevel="true" frameStrata="HIGH" enableMouse="true" parent="UIParent" hidden="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="800" y="480"/>
 		</Size>
@@ -6013,7 +6013,7 @@
 		</Scripts>
 	</Frame>
 
-	<Frame name="BCEPGP_debuginfo" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true">
+	<Frame name="BCEPGP_debuginfo" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true" clampedToScreen="true">
 		<Size>
 			<AbsDimension x="400" y="100" />
 		</Size>
