@@ -3922,7 +3922,6 @@
 				this:RegisterEvent("LOOT_OPENED");
 				this:RegisterEvent("LOOT_CLOSED");
 				this:RegisterEvent("LOOT_SLOT_CLEARED");
-				this:RegisterForDrag("LeftButton");
 				this:RegisterEvent("CHAT_MSG_WHISPER");
 				this:RegisterEvent("ADDON_LOADED");
 				this:RegisterEvent("GUILD_ROSTER_UPDATE");
@@ -3930,12 +3929,12 @@
 				this:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
 				this:RegisterEvent("CHAT_MSG_ADDON");
 			</OnLoad>
-			<OnDragStart>
+			<OnMouseDown>
 				this:StartMoving();
-			</OnDragStart>
-			<OnDragStop>
+			</OnMouseDown>
+			<OnMouseUp>
 				this:StopMovingOrSizing();
-			</OnDragStop>
+			</OnMouseUp>
 			<OnEvent>
 				BCEPGP_OnEvent();
 			</OnEvent>
