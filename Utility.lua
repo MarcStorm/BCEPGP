@@ -835,9 +835,38 @@ function BCEPGP_UIDropDownMenu_Initialize(frame, initFunction, displayMode, leve
 end
 
 function BCEPGP_getDebugInfo()
-	local info = "<details><summary>Debug Info</summary>";
-	info = info .. "<details><summary>Version</summary>" .. BCEPGP_VERSION .. "</details><br />";
-	info = info .. "<details><summary>GP Modifier</summary>" .. MOD .. "</details><br />";
+	local info = "<details><summary>Debug Info</summary><br />";
+	info = info .. "Version: " .. BCEPGP_VERSION .. "<br /><br />";
+	info = info .. "GP Modifier: " .. MOD .. "<br /><br />";
+	info = info .. "Base GP: " .. BASEGP .. "<br /><br />";
+	if STANDBYEP then
+		info = info .. "Standby EP: True<br /><br />";
+	else
+		info = info .. "Standby EP: False<br /><br />";
+	end
+	if STANDBYOFFLINE then
+		info = info .. "Standby Offline: True<br /><br />";
+	else
+		info = info .. "Standby Offline: False<br /><br />";
+	end
+	info = info .. "Standby Percent: " .. STANDBYPERCENT .. "<br /><br />";
+		if BCEPGP_standby_accept_whispers then
+		info = info .. "Standby Accept Whispers: True<br /><br />";
+	else
+		info = info .. "Standby Accept Whispers: False<br /><br />";
+	end
+	if BCEPGP_standby_byrank then
+		info = info .. "Standby EP by Rank: True<br /><br />";
+	else
+		info = info .. "Standby EP by Rank: False<br /><br />";
+	end
+	if BCEPGP_standby_manual then
+		info = info .. "Standby EP Manual Delegation: True<br /><br />";
+	else
+		info = info .. "Standby EP Manual Delegation: False<br /><br />";
+	end
+	info = info .. "Standby EP Whisper Keyphrase: " .. BCEPGP_standby_whisper_msg .. "<br /><br />";
+
 	info = info .. "<details><summary>Auto EP</summary><br />";
 	for k, v in pairs(AUTOEP) do
 		if v then
@@ -852,18 +881,6 @@ function BCEPGP_getDebugInfo()
 		info = info .. "<details><summary>" .. k .. "</summary>" .. v .. "</details><br />";
 	end
 	info = info .. "</details><br />";
-	info = info .. "<details><summary>Base GP</summary>" .. BASEGP .. "</details><br />";
-	if STANDBYEP then
-		info = info .. "<details><summary>Standby EP</summary>True</details><br />";
-	else
-		info = info .. "<details><summary>Standby EP</summary>False</details><br />";
-	end
-	if STANDBYOFFLINE then
-		info = info .. "<details><summary>Standby Offline</summary>True</details><br />";
-	else
-		info = info .. "<details><summary>Standby Offline</summary>False</details><br />";
-	end
-	info = info .. "<details><summary>Standby Percent</summary>" .. STANDBYPERCENT .. "</details><br />";
 	info = info .. "<details><summary>Standby Guild Ranks</summary><br />";
 	for k, v in pairs(STANDBYRANKS) do
 		if v[1] ~= "" then
@@ -880,22 +897,6 @@ function BCEPGP_getDebugInfo()
 		info = info .. "<details><summary>" .. k .. "</summary>" .. SLOTWEIGHTS[k] .. "</details><br />";
 	end
 	info = info .. "</details><br />";
-	if BCEPGP_standby_accept_whispers then
-		info = info .. "<details><summary>Standby Accept Whispers</summary>True</details><br />";
-	else
-		info = info .. "<details><summary>Standby Accept Whispers</summary>False</details><br />";
-	end
-	if BCEPGP_standby_byrank then
-		info = info .. "<details><summary>Standby EP by Rank</summary>True</details><br />";
-	else
-		info = info .. "<details><summary>Standby EP by Rank</summary>False</details><br />";
-	end
-	if BCEPGP_standby_manual then
-		info = info .. "<details><summary>Standby EP Manual Delegation</summary>True</details><br />";
-	else
-		info = info .. "<details><summary>Standby EP Manual Delegation</summary>False</details><br />";
-	end
-	info = info .. "<details><summary>Standby EP Whisper Keyphrase</summary>" .. BCEPGP_standby_whisper_msg .. "</details><br />";
 	info = info .. "</details>";
 	return info;
 end
