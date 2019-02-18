@@ -14,6 +14,30 @@
 		</Size>
 	</CheckButton>
 	
+	<Frame name="BCEPGPFrameTemplate" virtual="true" enableMouse="true" toplevel="true" hidden="true">
+		<Size>
+			<AbsDimension x="450" y="450" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset>
+					<AbsDimension x="0" y="-30" />
+				</Offset>
+			</Anchor>
+		</Anchors>
+		<Scripts>
+		<OnLoad>
+			this:RegisterForDrag("LeftButton");
+		</OnLoad>
+		<OnDragStart>
+			BCEPGP_frame:StartMoving()
+		</OnDragStart>
+		<OnDragStop>
+			BCEPGP_frame:StopMovingOrSizing()
+		</OnDragStop>
+	</Scripts>
+	</Frame>
+	
 	<Button name="LootDistButtonTemplate" virtual="true">
 		<Size>
 			<AbsDimension x="420" y="15"/>

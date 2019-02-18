@@ -149,17 +149,7 @@
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Frame name="BCEPGP_guild" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_guild" inherits="BCEPGPFrameTemplate">				
 				<Frames>
 					<Button name="BCEPGP_button_guild_dump" inherits="GameMenuButtonTemplate" text="Save Standings">
 						<Size>
@@ -596,29 +586,8 @@
 						</FontString>
 					</Layer>
 				</Layers>
-				<Scripts>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
-				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_raid" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_raid" inherits="BCEPGPFrameTemplate">
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="BCEPGP_raid_BCEPGP_mode" inherits="GameFontNormal" text="Current View: Raid">
@@ -957,29 +926,8 @@
 						</Scripts>
 					</Button>
 				</Frames>
-				<Scripts>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
-				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_loot" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_loot" inherits="BCEPGPFrameTemplate">
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="BCEPGP_loot_BCEPGP_mode" inherits="GameFontNormal" text="Current View: Loot Distribution">
@@ -1028,29 +976,8 @@
 						</Anchors>
 					</Button>
 				</Frames>
-				<Scripts>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
-				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_distribute" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_distribute" inherits="BCEPGPFrameTemplate">
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="BCEPGP_distribute_BCEPGP_mode" inherits="GameFontNormal" text="Distributing Item">
@@ -1436,28 +1363,9 @@
 					<OnShow>
 						distributing:Show();
 					</OnShow>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
 				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_options" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_options" inherits="BCEPGPFrameTemplate">
 				<Layers>
 					<Layer level="OVERLAY">
 						<FontString name="BCEPGP_options_BCEPGP_mode" inherits="GameFontNormal" text="Current View: Options">
@@ -2385,43 +2293,8 @@
 						<HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
 					</Button>
 				</Frames>
-				<Scripts>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
-				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_options_page_2" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
-				<Layers>
-					<Layer level="OVERLAY">
-						<FontString name="BCEPGP_options_page_2_header" inherits="GameFontNormal" text="EP       Auto Award">
-							<Color r="1" g="1" b="1"/>
-							<Anchors>
-								<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
-									<Offset>
-										<AbsDimension x="-12.5" y="-82.5" />
-									</Offset>
-								</Anchor>
-							</Anchors>
-						</FontString>
-					</Layer>
-				</Layers>
+			<Frame name="BCEPGP_options_page_2" inherits="BCEPGPFrameTemplate">
 				<Frames>
 					<Button name="BCEPGP_options_page_2_kara_button" inherits="GameMenuButtonTemplate" text="Karazhan">
 						<Size>
@@ -3688,34 +3561,25 @@
 								<Anchor point="CENTER" relativePoint="TOP" />
 							</Anchors>
 						</FontString>
+						<FontString name="BCEPGP_options_page_2_header" inherits="GameFontNormal" text="EP       Auto Award">
+							<Color r="1" g="1" b="1"/>
+							<Anchors>
+								<Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+									<Offset>
+										<AbsDimension x="-12.5" y="-82.5" />
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
 					</Layer>
 				</Layers>
 				<Scripts>
 					<OnShow>
 						BCEPGP_toggleBossConfigFrame("BCEPGP_options_page_2_karazhan");
 					</OnShow>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
 				</Scripts>
 			</Frame>
-			<Frame name="BCEPGP_standby" enableMouse="true" toplevel="true" hidden="true">
-				<Size>
-					<AbsDimension x="450" y="450" />
-				</Size>
-				<Anchors>
-					<Anchor point="CENTER">
-						<Offset>
-							<AbsDimension x="0" y="-30" />
-						</Offset>
-					</Anchor>
-				</Anchors>
+			<Frame name="BCEPGP_standby" inherits="BCEPGPFrameTemplate">
 				<Frames>
 					<Frame name="BCEPGP_standby_scrollframe">
 						<Size>
@@ -4051,17 +3915,6 @@
 						</FontString>
 					</Layer>
 				</Layers>
-				<Scripts>
-					<OnLoad>
-						this:RegisterForDrag("LeftButton");
-					</OnLoad>
-					<OnDragStart>
-						BCEPGP_frame:StartMoving()
-					</OnDragStart>
-					<OnDragStop>
-						BCEPGP_frame:StopMovingOrSizing()
-					</OnDragStop>
-				</Scripts>
 			</Frame>
 		</Frames>
 		<Scripts>
