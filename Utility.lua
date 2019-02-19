@@ -731,7 +731,7 @@ function capitaliseFirstLetter(str)
 	return str;
 end
 
-function BCEPGP_button_options:OnClick()
+function BCEPGP_button_options_OnClick()
 	BCEPGP_updateGuild();
 	PlaySound("gsTitleOptionExit");
 	BCEPGP_toggleFrame("BCEPGP_options");

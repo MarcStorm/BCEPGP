@@ -84,7 +84,7 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						this:OnClick();
+						BCEPGP_button_options_OnClick()
 					</OnClick>
 				</Scripts>
 			</Button>
