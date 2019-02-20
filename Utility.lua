@@ -2,6 +2,9 @@ function BCEPGP_initialise()
 	_, _, _, BCEPGP_ElvUI = GetAddOnInfo("ElvUI");
 	getglobal("BCEPGP_version_number"):SetText("Running Version: " .. BCEPGP_VERSION);
 	local ver2 = string.gsub(BCEPGP_VERSION, "%.", ",");
+	if BCEPGP_notice == nil then
+		BCEPGP_notice = false;
+	end
 	if CHANNEL == nil then
 		CHANNEL = "GUILD";
 	end
@@ -81,6 +84,9 @@ function BCEPGP_initialise()
 	DEFAULT_CHAT_FRAME:AddMessage("|c00FFC100Burning Crusade EPGP Version: " .. BCEPGP_VERSION .. " Loaded|r");
 	DEFAULT_CHAT_FRAME:AddMessage("|c00FFC100BCEPGP: Currently reporting to channel - " .. CHANNEL .. "|r");
 	
+	if not BCEPGP_notice then
+		BCEPGP_notice_frame:Show();
+	end
 end
 
 function BCEPGP_calcGP(link, quantity, id)

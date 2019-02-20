@@ -5964,4 +5964,94 @@
 			</EditBox>
 		</Frames>
 	</Frame>
+	
+	<Frame name="BCEPGP_notice_frame" parent="UIParent" hidden="true" enableMouse="true" toplevel="true" movable="true" clampedToScreen="true">
+		<Size>
+			<AbsDimension x="0" y="350" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER" />
+		</Anchors>
+		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<Color r="0" g="0" b="0" />
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture file="Interface\DialogFrame\UI-DialogBox-Header">
+					<Size>
+						<AbsDimension x="256" y="64"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="12"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<FontString name="BCEPGP_notice_title" inherits="GameFontNormal" text="Notice">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="BCEPGP_notice_text" inherits="GameFontNormal" text="">
+					<Anchors>
+						<Anchor point="TOP">
+							<Offset>
+								<AbsDimension x="0" y="-30"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="BCEPGP_notice_accept" inherits="GameMenuButtonTemplate" text="Got it!">
+				<Size>
+					<AbsDimension x="150" y="25" />
+				</Size>
+				<Anchors>
+					<Anchor point="BOTTOM">
+						<Offset>
+							<AbsDimension x="0" y="12" />
+						</Offset>
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>
+						PlaySound("gsTitleOptionExit");
+						BCEPGP_notice = true;
+						ReloadUI();
+					</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnLoad>
+				BCEPGP_notice_text:SetText("Thank you for choosing to use BC EPGP!\nI hope that you enjoy using this addon and I hope that it helps your guild\nhow ever you end up using it.\n\nJust one thing you should know - this addon needs to have\nfull control over your officer notes to maintain EPGP records.\nMeaning, as this addon attempts to maintain your records, it will overwrite\nany existing officer notes. Similarly, if you want your guild members to\nbe able to see their EP and GP values, they need to be able to see\nofficer notes too. Essentially, the addon can only see what you can see.\n\nThis addon is designed and really does work best if your\nyour whole guild (or at least your raid team) has it installed.\nThis will provide you with functions like loot council support\nand being able to see what items your raid members are wearing\nwhen you're distributing items.\n\nI hope you enjoy using the addon and if you have any feature requests or\nfind a bug, please submit a ticket on the addon GitHub page:\ngithub.com/Alumian/BCEPGP");
+				BCEPGP_notice_frame:SetWidth(BCEPGP_notice_text:GetStringWidth());
+			</OnLoad>
+			<OnMouseDown>
+				this:StartMoving();
+			</OnMouseDown>
+			<OnMouseUp>
+				this:StopMovingOrSizing();
+			</OnMouseUp>
+		</Scripts>
+	</Frame>
 </Ui>

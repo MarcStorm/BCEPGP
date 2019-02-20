@@ -2,7 +2,7 @@
 ## Title: BC EPGP
 ## Author: Alumian
 ## Notes: BC EPGP handles your guild's EPGP and master loot distribution. Usage: /bcepgp or /bce for options
-## SavedVariables: CHANNEL, MOD, AUTOEP, EPVALS, BASEGP, STANDBYEP, STANDBYOFFLINE, STANDBYPERCENT, STANDBYRANKS, SLOTWEIGHTS, RECORDS, OVERRIDE_INDEX, TRAFFIC, BCEPGP_standby_accept_whispers, BCEPGP_standby_byrank, BCEPGP_standby_manual, BCEPGP_standby_whisper_msg
+## SavedVariables: CHANNEL, MOD, AUTOEP, EPVALS, BASEGP, STANDBYEP, STANDBYOFFLINE, STANDBYPERCENT, STANDBYRANKS, SLOTWEIGHTS, RECORDS, OVERRIDE_INDEX, TRAFFIC, BCEPGP_standby_accept_whispers, BCEPGP_standby_byrank, BCEPGP_standby_manual, BCEPGP_standby_whisper_msg, BCEPGP_notice
 
 Virtual.xml
 Frame.xml

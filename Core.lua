@@ -49,6 +49,7 @@ BCEPGP_standby_accept_whispers = false;
 BCEPGP_standby_whisper_msg = "!standby";
 BCEPGP_standby_byrank = true;
 BCEPGP_standby_manual = false;
+BCEPGP_notice = false;
 STANDBYPERCENT = nil;
 STANDBYRANKS = {};
 SLOTWEIGHTS = {};
@@ -108,6 +109,11 @@ end
 
 function SlashCmdList.BCEPGP(msg, editbox)
 	msg = string.lower(msg);
+	
+	if not BCEPGP_disclaimer then
+		BCEPGP_print("You have not accepted, or you have declined the disclaimer. To accept the disclaimer, reload your UI", true);
+		return;
+	end
 	
 	if msg == "" then
 		BCEPGP_print("Burning Crusade EPGP Usage");
