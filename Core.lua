@@ -1,7 +1,7 @@
 --[[ Globals ]]--
 BCEPGP = CreateFrame("Frame");
 _G = getfenv(0);
-BCEPGP_VERSION = "2.0.11";
+BCEPGP_VERSION = "2.0.12";
 SLASH_BCEPGP1 = "/bcepgp";
 SLASH_BCEPGP2 = "/bce";
 BCEPGP_VERSION_NOTIFIED = false;
@@ -109,11 +109,6 @@ end
 
 function SlashCmdList.BCEPGP(msg, editbox)
 	msg = string.lower(msg);
-	
-	if not BCEPGP_disclaimer then
-		BCEPGP_print("You have not accepted, or you have declined the disclaimer. To accept the disclaimer, reload your UI", true);
-		return;
-	end
 	
 	if msg == "" then
 		BCEPGP_print("Burning Crusade EPGP Usage");
